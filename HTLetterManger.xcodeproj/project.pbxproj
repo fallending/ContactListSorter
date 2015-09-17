@@ -16,9 +16,9 @@
 		5A5FAF0417C9D93C000F4A7D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A5FAF0317C9D93C000F4A7D /* Default.png */; };
 		5A5FAF0617C9D93C000F4A7D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A5FAF0517C9D93C000F4A7D /* Default@2x.png */; };
 		5A5FAF0817C9D93C000F4A7D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A5FAF0717C9D93C000F4A7D /* Default-568h@2x.png */; };
-		6ACEBB631BAAF71C0011E3F7 /* NSArray+FirstLetterArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACEBB5B1BAAF71C0011E3F7 /* NSArray+FirstLetterArray.m */; };
-		6ACEBB641BAAF71C0011E3F7 /* NSString+FirstLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACEBB5D1BAAF71C0011E3F7 /* NSString+FirstLetter.m */; };
-		6ACEBB651BAAF71C0011E3F7 /* pinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACEBB601BAAF71C0011E3F7 /* pinyin.m */; };
+		6ACEBB631BAAF71C0011E3F7 /* NSArray+HTLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACEBB5B1BAAF71C0011E3F7 /* NSArray+HTLetter.m */; };
+		6ACEBB641BAAF71C0011E3F7 /* NSString+HTLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACEBB5D1BAAF71C0011E3F7 /* NSString+HTLetter.m */; };
+		6ACEBB651BAAF71C0011E3F7 /* Pinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACEBB601BAAF71C0011E3F7 /* Pinyin.m */; };
 		6ACEBB661BAAF71C0011E3F7 /* POAPinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACEBB621BAAF71C0011E3F7 /* POAPinyin.m */; };
 		6ACEBB681BAAF72B0011E3F7 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 6ACEBB671BAAF72B0011E3F7 /* README.md */; };
 /* End PBXBuildFile section */
@@ -37,13 +37,13 @@
 		5A5FAF0317C9D93C000F4A7D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		5A5FAF0517C9D93C000F4A7D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		5A5FAF0717C9D93C000F4A7D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		6ACEBB5A1BAAF71C0011E3F7 /* NSArray+FirstLetterArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+FirstLetterArray.h"; sourceTree = "<group>"; };
-		6ACEBB5B1BAAF71C0011E3F7 /* NSArray+FirstLetterArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+FirstLetterArray.m"; sourceTree = "<group>"; };
-		6ACEBB5C1BAAF71C0011E3F7 /* NSString+FirstLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FirstLetter.h"; sourceTree = "<group>"; };
-		6ACEBB5D1BAAF71C0011E3F7 /* NSString+FirstLetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FirstLetter.m"; sourceTree = "<group>"; };
+		6ACEBB5A1BAAF71C0011E3F7 /* NSArray+HTLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+HTLetter.h"; sourceTree = "<group>"; };
+		6ACEBB5B1BAAF71C0011E3F7 /* NSArray+HTLetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+HTLetter.m"; sourceTree = "<group>"; };
+		6ACEBB5C1BAAF71C0011E3F7 /* NSString+HTLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTLetter.h"; sourceTree = "<group>"; };
+		6ACEBB5D1BAAF71C0011E3F7 /* NSString+HTLetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTLetter.m"; sourceTree = "<group>"; };
 		6ACEBB5E1BAAF71C0011E3F7 /* HTLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLetter.h; sourceTree = "<group>"; };
-		6ACEBB5F1BAAF71C0011E3F7 /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
-		6ACEBB601BAAF71C0011E3F7 /* pinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pinyin.m; sourceTree = "<group>"; };
+		6ACEBB5F1BAAF71C0011E3F7 /* Pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pinyin.h; sourceTree = "<group>"; };
+		6ACEBB601BAAF71C0011E3F7 /* Pinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pinyin.m; sourceTree = "<group>"; };
 		6ACEBB611BAAF71C0011E3F7 /* POAPinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POAPinyin.h; sourceTree = "<group>"; };
 		6ACEBB621BAAF71C0011E3F7 /* POAPinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POAPinyin.m; sourceTree = "<group>"; };
 		6ACEBB671BAAF72B0011E3F7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -121,8 +121,8 @@
 			children = (
 				6ACEBB591BAAF71C0011E3F7 /* extension */,
 				6ACEBB5E1BAAF71C0011E3F7 /* HTLetter.h */,
-				6ACEBB5F1BAAF71C0011E3F7 /* pinyin.h */,
-				6ACEBB601BAAF71C0011E3F7 /* pinyin.m */,
+				6ACEBB5F1BAAF71C0011E3F7 /* Pinyin.h */,
+				6ACEBB601BAAF71C0011E3F7 /* Pinyin.m */,
 				6ACEBB611BAAF71C0011E3F7 /* POAPinyin.h */,
 				6ACEBB621BAAF71C0011E3F7 /* POAPinyin.m */,
 			);
@@ -132,10 +132,10 @@
 		6ACEBB591BAAF71C0011E3F7 /* extension */ = {
 			isa = PBXGroup;
 			children = (
-				6ACEBB5A1BAAF71C0011E3F7 /* NSArray+FirstLetterArray.h */,
-				6ACEBB5B1BAAF71C0011E3F7 /* NSArray+FirstLetterArray.m */,
-				6ACEBB5C1BAAF71C0011E3F7 /* NSString+FirstLetter.h */,
-				6ACEBB5D1BAAF71C0011E3F7 /* NSString+FirstLetter.m */,
+				6ACEBB5A1BAAF71C0011E3F7 /* NSArray+HTLetter.h */,
+				6ACEBB5B1BAAF71C0011E3F7 /* NSArray+HTLetter.m */,
+				6ACEBB5C1BAAF71C0011E3F7 /* NSString+HTLetter.h */,
+				6ACEBB5D1BAAF71C0011E3F7 /* NSString+HTLetter.m */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -205,9 +205,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6ACEBB651BAAF71C0011E3F7 /* pinyin.m in Sources */,
-				6ACEBB641BAAF71C0011E3F7 /* NSString+FirstLetter.m in Sources */,
-				6ACEBB631BAAF71C0011E3F7 /* NSArray+FirstLetterArray.m in Sources */,
+				6ACEBB651BAAF71C0011E3F7 /* Pinyin.m in Sources */,
+				6ACEBB641BAAF71C0011E3F7 /* NSString+HTLetter.m in Sources */,
+				6ACEBB631BAAF71C0011E3F7 /* NSArray+HTLetter.m in Sources */,
 				6ACEBB681BAAF72B0011E3F7 /* README.md in Sources */,
 				5A5FAEFE17C9D93C000F4A7D /* main.m in Sources */,
 				5A5FAF0217C9D93C000F4A7D /* AppDelegate.m in Sources */,

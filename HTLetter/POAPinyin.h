@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface POAPinyin : NSObject
 
 //输入中文，返回全拼。

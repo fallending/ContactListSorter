@@ -19,7 +19,7 @@
 
 
 
-@interface NSString (FirstLetter)
+@interface NSString (HTLetter)
 
 - (NSString *)firstLetter;
 

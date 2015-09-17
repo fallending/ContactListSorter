@@ -10,7 +10,7 @@
 #define HANZI_START 19968
 #define HANZI_COUNT 20902
 
-#import "pinyin.h"
+#import "Pinyin.h"
 
 static char firstLetterArray[HANZI_COUNT] = 
 "ydkqsxnwzssxjbymgcczqpssqbycdscdqldylybssjgyqzjjfgcclzznwdwzjljpfyynnjjtmynzwzhflzppqhgccyynmjqyxxgd"

@@ -6,10 +6,10 @@
 //  Copyright (c) 2013年 Hunter. All rights reserved.
 //
 
-#import "NSArray+FirstLetterArray.h"
+#import "NSArray+HTLetter.h"
 #import "pinyin.h"
 
-@implementation NSArray (FirstLetterArray)
+@implementation NSArray (HTLetter)
 
 - (NSDictionary *)sortedByFirstLetter {
     NSMutableDictionary *mutDic = [NSMutableDictionary dictionary];

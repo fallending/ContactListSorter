@@ -9,10 +9,10 @@
 #ifndef QQing_HTLetter_h
 #define QQing_HTLetter_h
 
-#import "NSArray+FirstLetterArray.h"
-#import "NSString+FirstLetter.h"
+#import "NSArray+HTLetter.h"
+#import "NSString+HTLetter.h"
 
-#import "pinyin.h"
+#import "Pinyin.h"
 #import "POAPinyin.h"
 
 #endif

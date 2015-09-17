@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSArray (FirstLetterArray)
+@interface NSArray (HTLetter)
 
 /**
  *	通过需要按【首字母分类】的 【姓名数组】 调用此函数
