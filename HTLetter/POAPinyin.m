@@ -11,9 +11,9 @@
 #define pyCount 475
 
 typedef  struct pinyinTableCell{
-    NSString * pinyin;
-    NSString * hanzi;
-}pinyinTableCell;
+    NSString *pinyin;
+    NSString *hanzi;
+} pinyinTableCell;
 
 const pinyinTableCell  pinyinTable[] = {
 {@"A",@"啊阿呵吖嗄腌锕錒"},

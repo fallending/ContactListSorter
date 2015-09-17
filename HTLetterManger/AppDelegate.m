@@ -7,8 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "NSArray+FirstLetterArray.h"
-#import "NSString+FirstLetter.h"
+#import "HTLetter.h"
 
 @implementation AppDelegate
 
@@ -27,7 +26,7 @@
     
     NSArray *array = @[@"sfes", @"sfdfs", @"wang", @"join", @"张小华", @"张晓乐", @"张喜浩", @"杨万里", @"yang", @"孙晓"];
     //获取首字符
-    NSDictionary *dic = [array sortedArrayUsingFirstLetter];
+    NSDictionary *dic = [array sortedByFirstLetter];
     //因为字典的无序，将所有的key取出来之后，重新输出
     NSArray *keys = [[dic allKeys] sortedArrayUsingSelector:@selector(compare:)];
     
