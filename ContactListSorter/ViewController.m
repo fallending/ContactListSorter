@@ -25,6 +25,12 @@
 
 #pragma mark - Intialize
 
+- (void)initData {
+    self.helper     = [ContactHelper new];
+    
+    [self.helper initCommonly];
+}
+
 - (void)initTableView {
     [self.tableView registerNib:[UITableViewCell nib]
          forCellReuseIdentifier:[UITableViewCell identifier]];
@@ -35,6 +41,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self initData];
     
     [self initTableView];
 }

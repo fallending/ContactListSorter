@@ -14,7 +14,8 @@
 		6A1468D01BF60D5900D718F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A1468CF1BF60D5900D718F5 /* Assets.xcassets */; };
 		6A1468D31BF60D5900D718F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A1468D11BF60D5900D718F5 /* LaunchScreen.storyboard */; };
 		6A1468DE1BF60D5900D718F5 /* ContactListSorterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1468DD1BF60D5900D718F5 /* ContactListSorterUITests.m */; };
-		6A1468EB1BF60E6F00D718F5 /* UITableViewCell+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1468EA1BF60E6F00D718F5 /* UITableViewCell+Base.m */; };
+		6A1468F41BF8D21200D718F5 /* UITableViewCell+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1468F31BF8D21200D718F5 /* UITableViewCell+Base.m */; };
+		6A1468F71BF8D22D00D718F5 /* ContactHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1468F61BF8D22D00D718F5 /* ContactHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,9 +42,11 @@
 		6A1468D91BF60D5900D718F5 /* ContactListSorterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactListSorterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A1468DD1BF60D5900D718F5 /* ContactListSorterUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactListSorterUITests.m; sourceTree = "<group>"; };
 		6A1468DF1BF60D5900D718F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6A1468E91BF60E6F00D718F5 /* UITableViewCell+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Base.h"; sourceTree = "<group>"; };
-		6A1468EA1BF60E6F00D718F5 /* UITableViewCell+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Base.m"; sourceTree = "<group>"; };
 		6A1468EC1BF60EA100D718F5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6A1468F21BF8D21200D718F5 /* UITableViewCell+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Base.h"; sourceTree = "<group>"; };
+		6A1468F31BF8D21200D718F5 /* UITableViewCell+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Base.m"; sourceTree = "<group>"; };
+		6A1468F51BF8D22D00D718F5 /* ContactHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactHelper.h; sourceTree = "<group>"; };
+		6A1468F61BF8D22D00D718F5 /* ContactHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,10 +123,20 @@
 		6A1468E81BF60E6F00D718F5 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				6A1468E91BF60E6F00D718F5 /* UITableViewCell+Base.h */,
-				6A1468EA1BF60E6F00D718F5 /* UITableViewCell+Base.m */,
+				6A1468F11BF8D21200D718F5 /* extension */,
+				6A1468F51BF8D22D00D718F5 /* ContactHelper.h */,
+				6A1468F61BF8D22D00D718F5 /* ContactHelper.m */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		6A1468F11BF8D21200D718F5 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				6A1468F21BF8D21200D718F5 /* UITableViewCell+Base.h */,
+				6A1468F31BF8D21200D718F5 /* UITableViewCell+Base.m */,
+			);
+			path = extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,7 +239,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A1468EB1BF60E6F00D718F5 /* UITableViewCell+Base.m in Sources */,
+				6A1468F71BF8D22D00D718F5 /* ContactHelper.m in Sources */,
+				6A1468F41BF8D21200D718F5 /* UITableViewCell+Base.m in Sources */,
 				6A1468CB1BF60D5900D718F5 /* ViewController.m in Sources */,
 				6A1468C81BF60D5900D718F5 /* AppDelegate.m in Sources */,
 				6A1468C51BF60D5900D718F5 /* main.m in Sources */,

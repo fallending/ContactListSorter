@@ -3,7 +3,6 @@
 ## 经 Fallenink 修改
 
 TODO:
-1. 添加一个TableView
 2. plist 配置姓名列表
 
 
