@@ -24,18 +24,17 @@
 /**
  *  返回tableview右方indexArray
  */
-+ (NSMutableArray *)indexWithStringArray:(NSArray *)strings;
++ (NSMutableArray *)indexWithPinyinObjectArray:(NSArray *)pinyinObjects;
 
-//-----  返回联系人
 /**
- *
+ *  返回联系人，（section、row）二维数组
  */
-+ (NSMutableArray *)LetterSortArray:(NSArray *)stringArr;
++ (NSMutableArray *)dataSourceWithPinyinObjectArray:(NSArray *)pinyinObjects;
 
 
 ///----------------------
 //返回一组字母排序数组(中英混排)
-+ (NSMutableArray *)SortArray:(NSArray *)stringArr;
++ (NSMutableArray *)chnsSortWithPinyinObjectArray:(NSArray *)pinyinObjects;
 
 @end
 
