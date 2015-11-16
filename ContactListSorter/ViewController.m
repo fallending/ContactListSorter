@@ -16,9 +16,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (nonatomic, strong) NSMutableArray *indexs;
-@property (nonatomic, strong) NSMutableArray *names;
-
 @end
 
 @implementation ViewController
@@ -55,25 +52,25 @@
 #pragma mark - UITableViewDelegate & UITableViewDataSource
 
 - (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-    return self.indexs;
+    return [self.helper contactTableSectionTitles];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [self.indexs objectAtIndex:section];
+    return [[self.helper contactTableSectionTitles] objectAtIndex:section];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [self.indexs count];
+    return [[self.helper contactTableSectionTitles] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[self.names objectAtIndex:section] count];
+    return [[[self.helper contactTableDataSource] objectAtIndex:section] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell   = [tableView dequeueReusableCellWithIdentifier:[UITableViewCell identifier]
                                                               forIndexPath:indexPath];
-    cell.textLabel.text     = [[self.names objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    cell.textLabel.text     = [[[self.helper contactTableDataSource] objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     
     return cell;
 }

@@ -29,19 +29,6 @@
     return self;
 }
 
-黎明酒馆：
-兽王 Rexxar 雷克萨·雷玛
-双头龙 Jakiro 加基诺
-炼金术士 Razzil Darkbrew 拉泽尔·黑炼
-月之女祭司 Mirana Nightshade 弥拉娜·夜影
-风暴之灵 Raijin Thunderkeg 瑞金·雷暴
-神灵武士 Huskar 哈斯伽
-圣堂刺客 Lanaya 拉娜亚
-仙女龙 Puck 帕卡
-发条地精 Rattletra 拉特瑞
-船长 Kunkka 库克
-风行者 Alleria 奥蕾莉亚·风行者
-
 - (void)initCommonly {
     NSMutableArray *contacts    = (NSMutableArray *)self.contacts;
     NSArray *nameSamples        = @[@"复仇之魂",@"众神之王",@"魅惑魔女",@"变体精灵", // 清晨酒馆
@@ -56,23 +43,26 @@
                                     @"刚背兽",@"熊猫酒仙",@"半人马酋长",@"赏金猎人",
                                     @"龙骑士",@"敌法师",@"黑暗游侠",@"全能骑士",
                                     
-                                    @"露娜·月牙",@"卡德尔·鹰眼",@"扎·拉卡",@"莱斯塔",
-                                    @"里格瓦尔",@"曼格斯",@"布莱德沃登 / 沃登",@"甘达",
-                                    @"骑士达威",@"魔法操控者 阿提玛基纳 / 玛基纳",@"翠希斯",@"普瑞斯特·雷霆之怒",
-                                    
                                     ];
     
     NSArray *markSamples        = @[@"姗德瑞拉·须木",@"宙斯",@"艾尤希莎",@"墨斐琳",
                                     @"瑞莱·克里斯提法",@"斯温",@"希里莎斯·娜迦 塞任",@"雷格·石蹄",
-                                    @"竹内 丸 / 瑞基马鲁",@"塞拉比尔/塞拉",@"莉娜·因巴斯 / 莉娜·因维斯",@"尤尼路·扎伽呐塔"
+                                    @"竹内 丸 / 瑞基马鲁",@"塞拉比尔/塞拉",@"莉娜·因巴斯 / 莉娜·因维斯",@"尤尼路·扎伽呐塔",
                                     
                                     @"诺瑞姆",@"鲁夫崔莱恩 / 崔莱恩",@"达奇罗",@"艾扎洛",
                                     @"乌萨尔",@"阿格热·碎石者",@"波希",@"玛法里奥 / 法里奥",
-                                    @"艾瑞斯 / 艾斯文",@"提尼",@"斯奎督军和斯普林",@"沈/陈"];
+                                    @"艾瑞斯 / 艾斯文",@"提尼",@"斯奎督军和斯普林",@"沈/陈",
+                                    
+                                    @"露娜·月牙",@"卡德尔·鹰眼",@"扎·拉卡",@"莱斯塔",
+                                    @"里格瓦尔",@"曼格斯",@"布莱德沃登 / 沃登",@"甘达",
+                                    @"骑士达威",@"魔法操控者 阿提玛基纳 / 玛基纳",@"翠希斯",@"普瑞斯特·雷霆之怒",
+                                    
+                                    
+                                    ];
     
     NSArray *engSamples         = @[@"Shendelzare Silkwood",@"Zeus",@"Aiushtha the Enchantress",@"Morphling",
                                     @"Rylai Crestfall",@"Sven",@"Slithice",@"Raigor Stonehoof",
-                                    @"Rikimaru",@"Syllabear",@"Lina Inverse",@"Yurnero"
+                                    @"Rikimaru",@"Syllabear",@"Lina Inverse",@"Yurnero",
                                     
                                     @"Nortrom",@"Rooftrellen",@"Darchro",@"Ezalor",
                                     @"Ulfsaar",@"Aggron Stonebreaker",@"Boush",@"Furion",
