@@ -13,6 +13,5 @@
 #import "NSString+HTLetter.h"
 
 #import "Pinyin.h"
-#import "POAPinyin.h"
 
 #endif
