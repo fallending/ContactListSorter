@@ -499,56 +499,47 @@ const pinyinTableCell  pinyinTable[] = {
 
 + (NSString *)pinyinWithLetterChn:(NSString *)chnString {
     NSString * pyString = @"";
- //   int chrAsc = 0;
-  //  int i1 = 0;
-  //  int i2 = 0;
     
-   for (int j = 0; j < [chnString length]; j++)
-   {
+    for (int j = 0; j < [chnString length]; j++) {
         NSRange rang;
         rang.location = j;
         rang.length = 1;
     
-       NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
-       NSData *data = [[chnString substringWithRange:rang] dataUsingEncoding:enc];
+        NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+        NSData *data = [[chnString substringWithRange:rang] dataUsingEncoding:enc];
        
-       NSRange zrang;
-       zrang.location = 1;
-       zrang.length = [[data description] length] -2;
-       NSString *zi =  [[data description] substringWithRange:zrang];
-      // NSLog(@"%@",zi);
+        NSRange zrang;
+        zrang.location = 1;
+        zrang.length = [[data description] length] -2;
+        
+        NSString *zi =  [[data description] substringWithRange:zrang];
        
-       if([zi length]<4){
-           pyString = [pyString stringByAppendingFormat:@" %@",[chnString substringWithRange:rang]];
+        if([zi length] < 4) {
+            pyString = [pyString stringByAppendingFormat:@" %@",[chnString substringWithRange:rang]];
+        }
        
-       }
+        const unsigned char *byte = [data bytes];
+        int bh = byte[0] - 0xA0;
        
-      const unsigned char *byte = [data bytes];
-       
-       int bh = byte[0] - 0xA0;
-       
-       
-       if((0x10 <= bh) && (bh <= 0x57))//是gb2312汉字
-       {
-           bool isFind = false;
-           for (int j = 0; j < pyCount; j++)
-           {
-              NSRange  tRang = [pinyinTable[j].hanzi rangeOfString:[chnString substringWithRange:rang]];
+        if((0x10 <= bh) && (bh <= 0x57)) { //是gb2312汉字
+            bool isFind = false;
+            for (int j = 0; j < pyCount; j++) {
+                NSRange  tRang = [pinyinTable[j].hanzi rangeOfString:[chnString substringWithRange:rang]];
               
-               if (tRang.location != NSNotFound) {
-                   pyString = [pyString stringByAppendingFormat:@" %@",pinyinTable[j].pinyin];
-                   isFind = true;
-                   break;
-               }
-           }
+                if (tRang.location != NSNotFound) {
+                    pyString = [pyString stringByAppendingFormat:@" %@",pinyinTable[j].pinyin];
+                    isFind = true;
+                    break;
+                }
+            }
            
-           if (!isFind) {
+            if (!isFind) {
                 pyString = [pyString stringByAppendingFormat:@" %@",[chnString substringWithRange:rang]];
-           }
-       } else{
-           pyString = [pyString stringByAppendingFormat:@" %@",[chnString substringWithRange:rang]];
-       }
-   }
+            }
+        } else {
+            pyString = [pyString stringByAppendingFormat:@" %@",[chnString substringWithRange:rang]];
+        }
+    }
     
     return [pyString uppercaseString];
 }
