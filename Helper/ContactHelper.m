@@ -83,6 +83,9 @@
         
         [contacts addObject:model];
     }
+    
+    self.indexArray = [ChineseString IndexArray:stringsToSort];
+    self.letterResultArr = [ChineseString LetterSortArray:stringsToSort];
 }
 
 - (void)initWithPlist:(NSString *)filename {
