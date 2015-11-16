@@ -16,6 +16,10 @@
 		6A1468DE1BF60D5900D718F5 /* ContactListSorterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1468DD1BF60D5900D718F5 /* ContactListSorterUITests.m */; };
 		6A1468F41BF8D21200D718F5 /* UITableViewCell+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1468F31BF8D21200D718F5 /* UITableViewCell+Base.m */; };
 		6A1468F71BF8D22D00D718F5 /* ContactHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1468F61BF8D22D00D718F5 /* ContactHelper.m */; };
+		6A1469051BF9A1AC00D718F5 /* NSArray+HTLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1468FD1BF9A1AC00D718F5 /* NSArray+HTLetter.m */; };
+		6A1469061BF9A1AC00D718F5 /* NSString+HTLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1468FF1BF9A1AC00D718F5 /* NSString+HTLetter.m */; };
+		6A1469071BF9A1AC00D718F5 /* pinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1469021BF9A1AC00D718F5 /* pinyin.m */; };
+		6A1469081BF9A1AC00D718F5 /* POAPinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1469041BF9A1AC00D718F5 /* POAPinyin.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,15 @@
 		6A1468F31BF8D21200D718F5 /* UITableViewCell+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Base.m"; sourceTree = "<group>"; };
 		6A1468F51BF8D22D00D718F5 /* ContactHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactHelper.h; sourceTree = "<group>"; };
 		6A1468F61BF8D22D00D718F5 /* ContactHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactHelper.m; sourceTree = "<group>"; };
+		6A1468FC1BF9A1AC00D718F5 /* NSArray+HTLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+HTLetter.h"; sourceTree = "<group>"; };
+		6A1468FD1BF9A1AC00D718F5 /* NSArray+HTLetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+HTLetter.m"; sourceTree = "<group>"; };
+		6A1468FE1BF9A1AC00D718F5 /* NSString+HTLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTLetter.h"; sourceTree = "<group>"; };
+		6A1468FF1BF9A1AC00D718F5 /* NSString+HTLetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTLetter.m"; sourceTree = "<group>"; };
+		6A1469001BF9A1AC00D718F5 /* HTLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLetter.h; sourceTree = "<group>"; };
+		6A1469011BF9A1AC00D718F5 /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
+		6A1469021BF9A1AC00D718F5 /* pinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pinyin.m; sourceTree = "<group>"; };
+		6A1469031BF9A1AC00D718F5 /* POAPinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POAPinyin.h; sourceTree = "<group>"; };
+		6A1469041BF9A1AC00D718F5 /* POAPinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POAPinyin.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +83,7 @@
 		6A1468B71BF60D5900D718F5 = {
 			isa = PBXGroup;
 			children = (
+				6A1468FA1BF9A1AC00D718F5 /* HTLetter */,
 				6A1468EC1BF60EA100D718F5 /* README.md */,
 				6A1468E81BF60E6F00D718F5 /* Helper */,
 				6A1468C21BF60D5900D718F5 /* ContactListSorter */,
@@ -135,6 +149,30 @@
 			children = (
 				6A1468F21BF8D21200D718F5 /* UITableViewCell+Base.h */,
 				6A1468F31BF8D21200D718F5 /* UITableViewCell+Base.m */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
+		6A1468FA1BF9A1AC00D718F5 /* HTLetter */ = {
+			isa = PBXGroup;
+			children = (
+				6A1468FB1BF9A1AC00D718F5 /* extension */,
+				6A1469001BF9A1AC00D718F5 /* HTLetter.h */,
+				6A1469011BF9A1AC00D718F5 /* pinyin.h */,
+				6A1469021BF9A1AC00D718F5 /* pinyin.m */,
+				6A1469031BF9A1AC00D718F5 /* POAPinyin.h */,
+				6A1469041BF9A1AC00D718F5 /* POAPinyin.m */,
+			);
+			path = HTLetter;
+			sourceTree = "<group>";
+		};
+		6A1468FB1BF9A1AC00D718F5 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				6A1468FC1BF9A1AC00D718F5 /* NSArray+HTLetter.h */,
+				6A1468FD1BF9A1AC00D718F5 /* NSArray+HTLetter.m */,
+				6A1468FE1BF9A1AC00D718F5 /* NSString+HTLetter.h */,
+				6A1468FF1BF9A1AC00D718F5 /* NSString+HTLetter.m */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -239,6 +277,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A1469061BF9A1AC00D718F5 /* NSString+HTLetter.m in Sources */,
+				6A1469051BF9A1AC00D718F5 /* NSArray+HTLetter.m in Sources */,
+				6A1469081BF9A1AC00D718F5 /* POAPinyin.m in Sources */,
+				6A1469071BF9A1AC00D718F5 /* pinyin.m in Sources */,
 				6A1468F71BF8D22D00D718F5 /* ContactHelper.m in Sources */,
 				6A1468F41BF8D21200D718F5 /* UITableViewCell+Base.m in Sources */,
 				6A1468CB1BF60D5900D718F5 /* ViewController.m in Sources */,
