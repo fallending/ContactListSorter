@@ -15,10 +15,48 @@
 
 ## 项目原文件介绍：
 
-
+HTLetter/HTLetter.h：该模块的汇总头文件
+HTLetter/Pinyin.h
+HTLetter/Pinyin.m：拼音相关实现
+HTLetter/extension/NSArray+HTLetter.h
+HTLetter/extension/NSArray+HTLetter.m：该文件，提供从名字数组，或，联系人Model出发，构建TableView的数据源
+HTLetter/extension/NSString+HTLetter.h
+HTLetter/extension/NSString+HTLetter.m：字符串处理
 
 ## 如何使用？
+1. 引入相关文件
 
+2. 准备好联系人 model 数组：contacts，构建数据源
+```objc
+/**
+*      key : value
+
+*      first letter : name array
+
+*      @"A" : @[@"赵大头",@"陈小头"]
+*/
+self.dataSource = (NSMutableDictionary *)[contacts sortedDictionaryWithPropertyKey:@"name"];
+
+/**
+*  section indexes titles
+*/
+self.sectionTitles = [[[self.dataSource allKeys] sortedArrayUsingSelector:@selector(compare:)] mutableCopy];
+```
+
+3. 对tableView整合IndexBar
+```objc
+- (GDIIndexBar *)indexBar {
+if (!_indexBar) {
+_indexBar                       = [[GDIIndexBar alloc] initWithTableView:self.tableView];
+_indexBar.delegate              = self;
+_indexBar.barBackgroundColor    = [UIColor clearColor];
+_indexBar.textColor             = [UIColor blackColor];
+_indexBar.textFont              = [UIFont boldSystemFontOfSize:9.f];
+}
+
+return _indexBar;
+}
+```
 
 ## 还有什么没有做？
 
