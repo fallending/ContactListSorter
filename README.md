@@ -6,22 +6,22 @@
 ## 基于原始项目做了什么？
 
 1. 重建了原始project
-2. 重新梳理了文件（但保留了部分文件的明明
+2. 重新梳理了文件（但保留了部分文件的命名）
 3. 重新命名了类名
 4. 修改并扩展了部分实现
-5. 创建了TableView可视化通讯录列表
-6. 将通讯录的独立出去ContactHelper，便于做额外的数据操作
-7. 引入侧边栏，快速选择器
+5. 创建了TableView通讯录列表
+6. 将通讯录数据处理的独立：ContactHelper，便于做额外的数据操作
+7. 引入索引侧边栏
 
 ## 项目原文件介绍：
 
-HTLetter/HTLetter.h：该模块的汇总头文件
-HTLetter/Pinyin.h
-HTLetter/Pinyin.m：拼音相关实现
-HTLetter/extension/NSArray+HTLetter.h
-HTLetter/extension/NSArray+HTLetter.m：该文件，提供从名字数组，或，联系人Model出发，构建TableView的数据源
-HTLetter/extension/NSString+HTLetter.h
-HTLetter/extension/NSString+HTLetter.m：字符串处理
+.HTLetter/HTLetter.h：该模块的汇总头文件
+.HTLetter/Pinyin.h
+.HTLetter/Pinyin.m：拼音相关实现
+.HTLetter/extension/NSArray+HTLetter.h
+.HTLetter/extension/NSArray+HTLetter.m：该文件，提供从名字数组，或，联系人Model出发，构建TableView的数据源
+.HTLetter/extension/NSString+HTLetter.h
+.HTLetter/extension/NSString+HTLetter.m：字符串处理
 
 ## 如何使用？
 1. 引入相关文件
