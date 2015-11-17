@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A032B051BFAD4C60019B302 /* GDIIndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A032B041BFAD4C60019B302 /* GDIIndexBar.m */; };
 		6A1468C51BF60D5900D718F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1468C41BF60D5900D718F5 /* main.m */; };
 		6A1468C81BF60D5900D718F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1468C71BF60D5900D718F5 /* AppDelegate.m */; };
 		6A1468CB1BF60D5900D718F5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1468CA1BF60D5900D718F5 /* ViewController.m */; };
@@ -32,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A032B031BFAD4C60019B302 /* GDIIndexBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIIndexBar.h; sourceTree = "<group>"; };
+		6A032B041BFAD4C60019B302 /* GDIIndexBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIIndexBar.m; sourceTree = "<group>"; };
 		6A1468C01BF60D5900D718F5 /* ContactListSorter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactListSorter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A1468C41BF60D5900D718F5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6A1468C61BF60D5900D718F5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -77,9 +80,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A032B021BFAD4C60019B302 /* GDIndexBar */ = {
+			isa = PBXGroup;
+			children = (
+				6A032B031BFAD4C60019B302 /* GDIIndexBar.h */,
+				6A032B041BFAD4C60019B302 /* GDIIndexBar.m */,
+			);
+			path = GDIndexBar;
+			sourceTree = "<group>";
+		};
 		6A1468B71BF60D5900D718F5 = {
 			isa = PBXGroup;
 			children = (
+				6A032B021BFAD4C60019B302 /* GDIndexBar */,
 				6A1468FA1BF9A1AC00D718F5 /* HTLetter */,
 				6A1468EC1BF60EA100D718F5 /* README.md */,
 				6A1468E81BF60E6F00D718F5 /* Helper */,
@@ -280,6 +293,7 @@
 				6A1468CB1BF60D5900D718F5 /* ViewController.m in Sources */,
 				6A1468C81BF60D5900D718F5 /* AppDelegate.m in Sources */,
 				6A1468C51BF60D5900D718F5 /* main.m in Sources */,
+				6A032B051BFAD4C60019B302 /* GDIIndexBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
