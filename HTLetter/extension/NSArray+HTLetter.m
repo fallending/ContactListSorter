@@ -117,3 +117,13 @@
 }
 
 @end
+
+#pragma mark - 拼音匹配
+
+@implementation NSArray ( PinyinMatch )
+
+- (NSArray *)filteredArrayWithSearchingString:(NSString *)search {
+    return self;
+}
+
+@end

@@ -29,3 +29,11 @@
 - (NSDictionary *)sortedDictionaryWithPropertyKey:(NSString *)propertyKey;
 
 @end
+
+#pragma mark - 拼音匹配
+
+@interface NSArray ( PinyinMatch )
+
+- (NSArray *)filteredArrayWithSearchingString:(NSString *)search;
+
+@end
