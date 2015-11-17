@@ -14,22 +14,7 @@
 @interface ContactHelper ()
 
 @property (nonatomic, strong) NSMutableArray *sectionTitles;
-@property (nonatomic, strong) NSMutableArray *dataSource;
-
-/**
- *  返回tableview右方indexArray
- */
-+ (NSMutableArray *)indexWithPinyinObjectArray:(NSArray *)pinyinObjects;
-
-/**
- *  返回联系人，（section、row）二维数组
- */
-+ (NSMutableArray *)dataSourceWithPinyinObjectArray:(NSArray *)pinyinObjects;
-
-
-///----------------------
-//返回一组字母排序数组(中英混排)
-+ (NSMutableArray *)chnsSortWithPinyinObjectArray:(NSArray *)pinyinObjects;
+@property (nonatomic, strong) NSMutableDictionary *dataSource;
 
 @end
 
@@ -91,7 +76,7 @@
     
     
     NSInteger count = [markSamples count];
-    while (count -- >= 0) {
+    while (count -- > 0) {
         ContactModel *model = [ContactModel new];
         model.name = [nameSamples objectAtIndex:count];
         model.mark = [markSamples objectAtIndex:count];
@@ -100,10 +85,31 @@
         [contacts addObject:model];
     }
 
+    /**
+     *      key : value
+     
+     *      first letter : name array
+     
+     *      @"A" : @[@"赵大头",@"陈小头"]
+     */
+    self.dataSource = (NSMutableDictionary *)[contacts sortedDictionaryWithPropertyKey:@"name"];
+    
+    /**
+     *  section indexes titles
+     */
+    self.sectionTitles = [[[self.dataSource allKeys] sortedArrayUsingSelector:@selector(compare:)] mutableCopy];
 }
 
 - (void)initWithPlist:(NSString *)filename {
     
+}
+
+- (NSArray *)contactTableSectionTitles {
+    return self.sectionTitles;
+}
+
+- (NSDictionary *)contactTableDataSource {
+    return self.dataSource;
 }
 
 @end

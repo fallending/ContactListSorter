@@ -17,7 +17,7 @@
             B：以b打头的姓名或者单词
  */
 
-- (NSDictionary *)sortedByFirstLetter;
+- (NSDictionary *)sortedDictionary; // k:v 首字母－名字数组
 
 /**
  *  Add by fallenink.
@@ -26,6 +26,6 @@
  
  *  但是支持Array中时任意对象，需要提供Key
  */
-- (NSDictionary *)sortedByFirstLetterWithPropertyKey:(NSString *)propertyKey;
+- (NSDictionary *)sortedDictionaryWithPropertyKey:(NSString *)propertyKey;
 
 @end

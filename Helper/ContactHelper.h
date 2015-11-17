@@ -22,7 +22,7 @@
 - (NSArray *)contactTableSectionTitles;
 
 // 获取section、row二维model数组
-- (NSArray *)contactTableDataSource;
+- (NSDictionary *)contactTableDataSource;
 
 @end
 

@@ -787,7 +787,7 @@ static char firstLetterArray[HANZI_COUNT] =
 
 @end
 
-NS_INLINE char pinyinFirstLetter(unsigned short hanzi) {
+char pinyinFirstLetter(unsigned short hanzi) {
     int index = hanzi - HANZI_START;
     if (index >= 0 && index <= HANZI_COUNT) {
         return firstLetterArray[index];

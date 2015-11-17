@@ -12,7 +12,7 @@
 
 @implementation NSArray (HTLetter)
 
-- (NSDictionary *)sortedByFirstLetter {
+- (NSDictionary *)sortedDictionary {
     NSMutableDictionary *mutDic = [NSMutableDictionary dictionary];
     const char *letterPoint = NULL;
     NSString *firstLetter = nil;
@@ -62,7 +62,7 @@
     return mutDic;
 }
 
-- (NSDictionary *)sortedByFirstLetterWithPropertyKey:(NSString *)propertyKey {
+- (NSDictionary *)sortedDictionaryWithPropertyKey:(NSString *)propertyKey {
     NSAssert(propertyKey, @"sortedByFirstLetterWithPropertyKey key nil");
     
     NSMutableDictionary *mutDic = [NSMutableDictionary dictionary];

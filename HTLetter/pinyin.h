@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-NS_INLINE char pinyinFirstLetter(unsigned short hanzi);
+char pinyinFirstLetter(unsigned short hanzi);
 
 @class PinyinMapObject;
 

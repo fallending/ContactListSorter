@@ -29,8 +29,8 @@
 }
 
 - (void)initTableView {
-    [self.tableView registerNib:[UITableViewCell nib]
-         forCellReuseIdentifier:[UITableViewCell identifier]];
+//    [self.tableView registerClass:[UITableViewCell class]
+//           forCellReuseIdentifier:[UITableViewCell identifier]];
 }
 
 
@@ -38,6 +38,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // 初始化当前Controller，用大括号分隔
+    {
+        self.title  = @"通讯录";
+    }
     
     [self initData];
     
@@ -64,13 +69,22 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[[self.helper contactTableDataSource] objectAtIndex:section] count];
+    id key = [[self.helper contactTableSectionTitles] objectAtIndex:section];
+    return [[[self.helper contactTableDataSource] objectForKey:key] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell   = [tableView dequeueReusableCellWithIdentifier:[UITableViewCell identifier]
-                                                              forIndexPath:indexPath];
-    cell.textLabel.text     = [[[self.helper contactTableDataSource] objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    UITableViewCell *cell   = [tableView dequeueReusableCellWithIdentifier:[UITableViewCell identifier]];
+    id key = [[self.helper contactTableSectionTitles] objectAtIndex:indexPath.section];
+    NSArray *models = [[self.helper contactTableDataSource] objectForKey:key];
+    ContactModel *model = [models objectAtIndex:indexPath.row];
+    
+    if (!cell) {
+        cell    = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:[UITableViewCell identifier]];
+    }
+    
+    cell.textLabel.text     = model.name;
+    cell.detailTextLabel.text   = [NSString stringWithFormat:@"%@ (%@)", model.mark, model.eng];
     
     return cell;
 }
