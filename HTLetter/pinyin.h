@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_INLINE char pinyinFirstLetter(unsigned short hanzi);
+
 @class PinyinMapObject;
 
 @interface Pinyin : NSObject
@@ -20,21 +22,6 @@
  *  全拼
  */
 + (NSString *)pinyinWithLetterChn:(NSString *)chnString;
-
-/**
- *  返回tableview右方indexArray
- */
-+ (NSMutableArray *)indexWithPinyinObjectArray:(NSArray *)pinyinObjects;
-
-/**
- *  返回联系人，（section、row）二维数组
- */
-+ (NSMutableArray *)dataSourceWithPinyinObjectArray:(NSArray *)pinyinObjects;
-
-
-///----------------------
-//返回一组字母排序数组(中英混排)
-+ (NSMutableArray *)chnsSortWithPinyinObjectArray:(NSArray *)pinyinObjects;
 
 @end
 

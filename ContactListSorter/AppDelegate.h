@@ -11,6 +11,7 @@
 #import "UITableViewCell+Base.h"
 
 #import "ContactHelper.h"
+#import "HTLetter.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

@@ -7,6 +7,7 @@
 //
 
 #import "NSArray+HTLetter.h"
+#import "NSString+HTLetter.h"
 #import "pinyin.h"
 
 @implementation NSArray (HTLetter)
@@ -65,32 +66,35 @@
     NSAssert(propertyKey, @"sortedByFirstLetterWithPropertyKey key nil");
     
     NSMutableDictionary *mutDic = [NSMutableDictionary dictionary];
-    const char *letterPoint     = NULL;
+    char firstChar;
     NSString *firstLetter       = nil;
     for (NSObject *obj in self) {
         NSString *str           = [obj valueForKey:propertyKey];
         
-        //检查 str 是不是 NSString 类型
+        // 去掉特殊字符
+        str                     = [str trimSpecialCharacter];
+        [obj setValue:str forKey:propertyKey];
+        
+        // 检查 str 是不是 NSString 类型
         if (![str isKindOfClass:[NSString class]]) {
             NSAssert(NO, @"object in array is not NSString");
 
             continue;
         }
-        
-        letterPoint = [str UTF8String];
-        
-        //如果开头不是大小写字母则读取 首字符
-        if (!(*letterPoint > 'a' && *letterPoint < 'z') &&
-            !(*letterPoint > 'A' && *letterPoint < 'Z')) {
-            
-            //汉字或其它字符
-            char letter = pinyinFirstLetter([str characterAtIndex:0]);
-            letterPoint = &letter;
-            
+
+        // 如果开头不是大小写字母则读取 首字符
+        NSString *regex = @"[A-Za-z]+";
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+        NSString *initialStr = [str length] ? [str substringToIndex:1] : @"";
+        if ([predicate evaluateWithObject:initialStr]) {
+            str = [str capitalizedString];
+            firstChar  = [str characterAtIndex:0];
+        } else {
+            firstChar = pinyinFirstLetter([str characterAtIndex:0]);
         }
-        //首字母转成大写
-        firstLetter = [[NSString stringWithFormat:@"%c", *letterPoint] uppercaseString];
         
+        firstLetter = [[NSString stringWithFormat:@"%c", firstChar] uppercaseString];
+
         //首字母所对应的 姓名列表
         NSMutableArray *mutArray = [mutDic objectForKey:firstLetter];
         
@@ -102,16 +106,10 @@
         [mutArray addObject:obj];
     }
     
-    //字典是无序的，数组是有序的，
-    //将数组排序
+    // 将数组，按propertyKey，按降序排列
     for (NSString *key in [mutDic allKeys]) {
-        NSArray *nameArray = [[mutDic objectForKey:key] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-            NSString *str1  = [(NSObject *)obj1 valueForKey:propertyKey];
-            NSString *str2  = [(NSObject *)obj2 valueForKey:propertyKey];
-            
-            return [str1 compare:str2];
-        }];
-        
+        NSArray *sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:propertyKey ascending:NO]];
+        NSArray *nameArray = [[mutDic objectForKey:key] sortedArrayUsingDescriptors:sortDescriptors];
         [mutDic setValue:nameArray forKey:key];
     }
     

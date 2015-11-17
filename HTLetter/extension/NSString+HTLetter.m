@@ -12,20 +12,33 @@
 @implementation NSString (HTLetter)
 
 - (NSString *)firstLetter {
-    return [HTFirstLetter firstLetter:self];
+    return [Pinyin firstLetter:self];
 }
 
 - (NSString *)firstLetters {
-    return [HTFirstLetter firstLetters:self];
+    return [Pinyin firstLetters:self];
 }
-
-//为了减少内存就占用，如无必要，不要使用此函数
-#if ALL_LETTER_ISAVAILABLE
 
 - (NSString *)allLetters {
-    return [POAPinyin Convert:self];
+    return [Pinyin pinyinWithLetterChn:self];
 }
 
-#endif
+- (NSString *)trimSpecialCharacter {
+    NSRange urgentRange = [self rangeOfCharacterFromSet: [NSCharacterSet characterSetWithCharactersInString: @",.？、 ~￥#&<>《》()[]{}【】^@/￡¤|§¨「」『』￠￢￣~@#&*（）——+|《》$_€"]];
+    if (urgentRange.location != NSNotFound) {
+        return [self trimSpecialCharacter];
+    }
+    return self;
+}
+
+#pragma mark - Private
+
+- (NSString *)trimSpecialCharacter:(NSString *)srcString {
+    NSRange urgentRange = [srcString rangeOfCharacterFromSet: [NSCharacterSet characterSetWithCharactersInString: @",.？、 ~￥#&<>《》()[]{}【】^@/￡¤|§¨「」『』￠￢￣~@#&*（）——+|《》$_€"]];
+    if (urgentRange.location != NSNotFound) {
+        return [self trimSpecialCharacter:[srcString stringByReplacingCharactersInRange:urgentRange withString:@""]];
+    }
+    return srcString;
+}
 
 @end

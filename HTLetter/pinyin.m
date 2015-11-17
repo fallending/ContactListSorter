@@ -8,8 +8,6 @@
 
 #import "Pinyin.h"
 
-NS_INLINE char pinyinFirstLetter(unsigned short hanzi);
-
 #define pyCount 475
 
 typedef  struct PinyinMap {
@@ -547,122 +545,6 @@ const PinyinMap pinyinMap[] = {
     }
     
     return [pyString uppercaseString];
-}
-
-+ (NSMutableArray *)indexWithPinyinObjectArray:(NSArray *)pinyinObjects {
-    NSMutableArray *tempArray = [self sortPinyinObjectArray:pinyinObjects];
-    NSMutableArray *A_Result = [NSMutableArray array];
-    NSString *tempString = nil;
-    
-    for (NSString* object in tempArray) {
-        NSString *pinyin = [((PinyinMapObject *)object).pinyin substringToIndex:1];
-        //不同
-        if(![tempString isEqualToString:pinyin]) {
-            [A_Result addObject:pinyin];
-            tempString = pinyin;
-        }
-    }
-    
-    return A_Result;
-}
-
-/**
- *  返回联系人
- */
-+ (NSMutableArray*)dataSourceWithPinyinObjectArray:(NSArray *)pinyinObjects {
-    NSMutableArray *tempArray = [self sortPinyinObjectArray:pinyinObjects];
-    NSMutableArray *LetterResult = [NSMutableArray array];
-    NSMutableArray *item = [NSMutableArray array];
-    NSString *tempString = nil;
-    //拼音分组
-    for (NSString* object in tempArray) {
-        
-        NSString *pinyin = [((PinyinMapObject *)object).pinyin substringToIndex:1];
-        NSString *string = ((PinyinMapObject *)object).pinyinChn;
-        //不同
-        if(![tempString isEqualToString:pinyin]) {
-            //分组
-            item = [NSMutableArray array];
-            [item  addObject:string];
-            [LetterResult addObject:item];
-            //遍历
-            tempString = pinyin;
-        } else { //相同
-            [item  addObject:string];
-        }
-    }
-    return LetterResult;
-}
-
-/**
- *  返回排序好的字符拼音
- */
-+ (NSMutableArray *)sortPinyinObjectArray:(NSArray *)inPinyinObjects {
-    NSMutableArray *pinyinObjects = [NSMutableArray array]; //获取字符串中文字的拼音首字母并与字符串共同存放
-    
-    for(int i = 0; i < [inPinyinObjects count]; i++) {
-        PinyinMapObject *pinyinObject = [PinyinMapObject new];
-        pinyinObject.pinyinChn = [NSString stringWithString:[inPinyinObjects objectAtIndex:i]];
-        if(pinyinObject.pinyinChn == nil){
-            pinyinObject.pinyinChn = @"";
-        }
-        
-        //去除两端空格和回车
-        pinyinObject.pinyinChn  = [pinyinObject.pinyinChn stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-
-        //这里我自己写了一个递归过滤指定字符串   RemoveSpecialCharacter
-        pinyinObject.pinyinChn = [self removeSpecialCharacter:pinyinObject.pinyinChn];
-
-        //判断首字符是否为字母
-        NSString *regex = @"[A-Za-z]+";
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
-        NSString *initialStr = [pinyinObject.pinyinChn length]?[pinyinObject.pinyinChn substringToIndex:1]:@"";
-        if ([predicate evaluateWithObject:initialStr]) {
-            pinyinObject.pinyin = [pinyinObject.pinyinChn capitalizedString]; // 首字母大写
-        } else {
-            if(![pinyinObject.pinyinChn isEqualToString:@""]){
-                NSString *pinYinResult = [NSString string];
-                for(int j = 0; j < pinyinObject.pinyinChn.length; j++) {
-                    NSString *singlePinyinLetter =
-                    [[NSString stringWithFormat:@"%c",
-                    pinyinFirstLetter([pinyinObject.pinyinChn characterAtIndex:j])] uppercaseString];
-                    pinYinResult = [pinYinResult stringByAppendingString:singlePinyinLetter];
-                }
-                pinyinObject.pinyin = pinYinResult;
-            } else {
-                pinyinObject.pinyin = @"";
-            }
-        }
-        [pinyinObjects addObject:pinyinObject];
-    }
-    //按照拼音首字母对这些Strings进行排序
-    NSArray *sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"pinyin" ascending:YES]];
-    [pinyinObjects sortUsingDescriptors:sortDescriptors];
-
-    return pinyinObjects;
-}
-
-/**
- *  返回一组字母排序数组
- */
-+ (NSMutableArray *)chnsSortWithPinyinObjectArray:(NSArray *)pinyinObjects {
-    NSMutableArray *tempArray = [self sortPinyinObjectArray:pinyinObjects];
-    
-    //把排序好的内容从ChineseString类中提取出来
-    NSMutableArray *result = [NSMutableArray array];
-    for(int i = 0; i < [pinyinObjects count]; i++) {
-        [result addObject:((PinyinMapObject *)[tempArray objectAtIndex:i]).pinyinChn];
-    }
-    return result;
-}
-
-//过滤指定字符串   里面的指定字符根据自己的需要添加 过滤特殊字符
-+ (NSString *)removeSpecialCharacter:(NSString *)str {
-    NSRange urgentRange = [str rangeOfCharacterFromSet: [NSCharacterSet characterSetWithCharactersInString: @",.？、 ~￥#&<>《》()[]{}【】^@/￡¤|§¨「」『』￠￢￣~@#&*（）——+|《》$_€"]];
-    if (urgentRange.location != NSNotFound) {
-        return [self removeSpecialCharacter:[str stringByReplacingCharactersInRange:urgentRange withString:@""]];
-    }
-    return str;
 }
 
 @end

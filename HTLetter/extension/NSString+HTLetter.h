@@ -6,18 +6,7 @@
 //  Copyright (c) 2013年 Hunter. All rights reserved.
 //
 
-#define ALL_LETTER_ISAVAILABLE  1
-
 #import <Foundation/Foundation.h>
-
-//为了减少内存就占用，如无必要，不要使用此函数
-#if ALL_LETTER_ISAVAILABLE
-
-#import "POAPinyin.h"
-
-#endif
-
-
 
 @interface NSString (HTLetter)
 
@@ -25,10 +14,11 @@
 
 - (NSString *)firstLetters;
 
-#if ALL_LETTER_ISAVAILABLE
-
 - (NSString *)allLetters;
 
-#endif
+/**
+ *  去名字的特殊字符
+ */
+- (NSString *)trimSpecialCharacter;
 
 @end

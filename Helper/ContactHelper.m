@@ -9,11 +9,27 @@
 //  按功能写XXXHelper，不可过于零散，不可不归类
 
 #import "ContactHelper.h"
+#import "AppDelegate.h"
 
 @interface ContactHelper ()
 
 @property (nonatomic, strong) NSMutableArray *sectionTitles;
 @property (nonatomic, strong) NSMutableArray *dataSource;
+
+/**
+ *  返回tableview右方indexArray
+ */
++ (NSMutableArray *)indexWithPinyinObjectArray:(NSArray *)pinyinObjects;
+
+/**
+ *  返回联系人，（section、row）二维数组
+ */
++ (NSMutableArray *)dataSourceWithPinyinObjectArray:(NSArray *)pinyinObjects;
+
+
+///----------------------
+//返回一组字母排序数组(中英混排)
++ (NSMutableArray *)chnsSortWithPinyinObjectArray:(NSArray *)pinyinObjects;
 
 @end
 
@@ -83,16 +99,12 @@
         
         [contacts addObject:model];
     }
-    
-    self.indexArray = [ChineseString IndexArray:stringsToSort];
-    self.letterResultArr = [ChineseString LetterSortArray:stringsToSort];
+
 }
 
 - (void)initWithPlist:(NSString *)filename {
     
 }
-
-#pragma mark -
 
 @end
 
