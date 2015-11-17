@@ -34,6 +34,10 @@
 
 @interface NSArray ( PinyinMatch )
 
+/**
+ *  参考：http://blog.csdn.net/nanman/article/details/6062764
+ 
+ */
 - (NSArray *)filteredArrayWithSearchingString:(NSString *)search;
 
 @end
