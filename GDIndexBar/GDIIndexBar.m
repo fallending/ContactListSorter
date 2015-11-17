@@ -501,7 +501,7 @@ CGPoint CGPointAdd(CGPoint point1, CGPoint point2) {
         return _textColor;
     }
     if ([GDIIndexBar isOS7OrLater]) {
-        return [UIColor themeBlueColor];
+        return [UIColor blackColor];
     }
     return [UIColor grayColor];
 }

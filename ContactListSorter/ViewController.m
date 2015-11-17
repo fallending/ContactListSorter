@@ -11,10 +11,13 @@
 
 @interface ViewController () <
     UITableViewDelegate,
-    UITableViewDataSource
+    UITableViewDataSource,
+    GDIIndexBarDelegate
 >
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (nonatomic, strong) GDIIndexBar *                 indexBar;
 
 @end
 
@@ -29,8 +32,11 @@
 }
 
 - (void)initTableView {
-//    [self.tableView registerClass:[UITableViewCell class]
-//           forCellReuseIdentifier:[UITableViewCell identifier]];
+    self.tableView.tableFooterView                      = [UIView new];
+    
+    [self.view addSubview:self.indexBar];
+    
+//    [self.indexBar reload];
 }
 
 
@@ -56,9 +62,10 @@
 
 #pragma mark - UITableViewDelegate & UITableViewDataSource
 
-- (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-    return [self.helper contactTableSectionTitles];
-}
+//  UITableView 自带的 indexTitle
+//- (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+//    return [self.helper contactTableSectionTitles];
+//}
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return [[self.helper contactTableSectionTitles] objectAtIndex:section];
@@ -99,6 +106,36 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - GDIIndexBarDelegate
+
+- (NSUInteger)numberOfIndexesForIndexBar:(GDIIndexBar *)indexBar {
+    return [[self.helper contactTableSectionTitles] count];
+}
+
+- (NSString *)stringForIndex:(NSUInteger)index {
+    return [[self.helper contactTableSectionTitles] objectAtIndex:index];
+}
+
+- (void)indexBar:(GDIIndexBar *)indexBar didSelectIndex:(NSUInteger)index {
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:index]
+                          atScrollPosition:UITableViewScrollPositionTop
+                                  animated:YES];
+}
+
+#pragma mark - Property
+
+- (GDIIndexBar *)indexBar {
+    if (!_indexBar) {
+        _indexBar                       = [[GDIIndexBar alloc] initWithTableView:self.tableView];
+        _indexBar.delegate              = self;
+        _indexBar.barBackgroundColor    = [UIColor clearColor];
+        _indexBar.textColor             = [UIColor blackColor];
+        _indexBar.textFont              = [UIFont boldSystemFontOfSize:9.f];
+    }
+    
+    return _indexBar;
 }
 
 @end

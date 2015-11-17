@@ -12,6 +12,7 @@
 
 #import "ContactHelper.h"
 #import "HTLetter.h"
+#import "GDIIndexBar.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

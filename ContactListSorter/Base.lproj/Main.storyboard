@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="amZ-ZG-bdL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="amZ-ZG-bdL">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -29,6 +29,12 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="amZ-ZG-bdL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZBq-ss-WIE"/>
+                            <constraint firstItem="amZ-ZG-bdL" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="bAN-f9-hBV"/>
+                            <constraint firstItem="amZ-ZG-bdL" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="coh-cx-Aws"/>
+                            <constraint firstItem="amZ-ZG-bdL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hrd-Sd-1bl"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bWQ-OL-95n"/>
                     <connections>
