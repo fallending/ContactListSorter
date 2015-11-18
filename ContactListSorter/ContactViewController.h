@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ContactViewController.h
 //  ContactListSorter
 //
 //  Created by fallen.ink on 11/13/15.
@@ -10,7 +10,7 @@
 
 @class ContactHelper;
 
-@interface ViewController : UIViewController
+@interface ContactViewController : UIViewController
 
 @property (nonatomic, strong) ContactHelper *helper;
 

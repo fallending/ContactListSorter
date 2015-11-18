@@ -1,15 +1,15 @@
 //
-//  ViewController.m
+//  ContactViewController.m
 //  ContactListSorter
 //
 //  Created by fallen.ink on 11/13/15.
 //  Copyright © 2015 fallen.ink. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ContactViewController.h"
 #import "AppDelegate.h"
 
-@interface ViewController () <
+@interface ContactViewController () <
     UITableViewDelegate,
     UITableViewDataSource,
     GDIIndexBarDelegate,
@@ -28,7 +28,7 @@
 
 @end
 
-@implementation ViewController
+@implementation ContactViewController
 
 #pragma mark - Intialize
 
