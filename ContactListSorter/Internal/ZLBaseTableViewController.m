@@ -9,8 +9,8 @@
 #import "ZLBaseTableViewController.h"
 #import "LRIndexedCollationWithSearch.h"
 
-#import "APContact.h"
-#import "APContact+Sorting.h"
+//#import "APContact.h"
+//#import "APContact+Sorting.h"
 
 @implementation ZLBaseTableViewController
 
@@ -31,24 +31,24 @@
     self.partitionedContacts = [[self emptyPartitionedArray] mutableCopy];
 
     NSMutableSet *allPhoneNumbers = [NSMutableSet set];
-    for (APContact *contact in contacts) {
-
-        // only display one linked contacts        
-        if(contact.phones && [contact.phones count] > 0 && ![allPhoneNumbers containsObject:contact.phones[0]]) {
-            [allPhoneNumbers addObject:contact.phones[0]];
-        }
-
-        // add new contact
-        SEL selector = @selector(lastName);
-        if (contact.lastName.length == 0) {
-            selector = @selector(compositeName);
-        }
-        NSInteger index = [[LRIndexedCollationWithSearch currentCollation]
-                   sectionForObject:contact
-            collationStringSelector:selector];
-        // contact.sectionIndex = index;
-        [self.partitionedContacts[index] addObject:contact];
-    }
+//    for (APContact *contact in contacts) {
+//
+//        // only display one linked contacts        
+//        if(contact.phones && [contact.phones count] > 0 && ![allPhoneNumbers containsObject:contact.phones[0]]) {
+//            [allPhoneNumbers addObject:contact.phones[0]];
+//        }
+//
+//        // add new contact
+//        SEL selector = @selector(lastName);
+//        if (contact.lastName.length == 0) {
+//            selector = @selector(compositeName);
+//        }
+//        NSInteger index = [[LRIndexedCollationWithSearch currentCollation]
+//                   sectionForObject:contact
+//            collationStringSelector:selector];
+//        // contact.sectionIndex = index;
+//        [self.partitionedContacts[index] addObject:contact];
+//    }
 
     // sort sections
     NSUInteger sectionCount =
@@ -66,36 +66,36 @@
         {
             NSMutableArray *subSection = [NSMutableArray array];
             NSString *currentLastName = [NSString string];
-            for (int i = 0; i < sortedSectionByLastName.count; i++) {
-                APContact *contact = (APContact *)sortedSectionByLastName[i];
-                NSString *lastName = [contact lastNameOrCompositeName];
+//            for (int i = 0; i < sortedSectionByLastName.count; i++) {
+//                APContact *contact = (APContact *)sortedSectionByLastName[i];
+//                NSString *lastName = [contact lastNameOrCompositeName];
+//
+//                if ([lastName isEqualToString:currentLastName]) {
+//                    [subSection addObject:contact];
+//                } else {
+//                    if (subSection.count > 0) {
+//                        NSArray *sortedSubSectionByFirstName =
+//                            [[LRIndexedCollationWithSearch currentCollation]
+//                                   sortedArrayFromArray:subSection
+//                                collationStringSelector:
+//                                    @selector(firstNameOrCompositeName)];
+//                        [sortedSection
+//                            addObjectsFromArray:sortedSubSectionByFirstName];
+//                        [subSection removeAllObjects];
+//                    }
+//                    currentLastName = lastName;
+//                    [subSection addObject:contact];
+//                }
+//            }
 
-                if ([lastName isEqualToString:currentLastName]) {
-                    [subSection addObject:contact];
-                } else {
-                    if (subSection.count > 0) {
-                        NSArray *sortedSubSectionByFirstName =
-                            [[LRIndexedCollationWithSearch currentCollation]
-                                   sortedArrayFromArray:subSection
-                                collationStringSelector:
-                                    @selector(firstNameOrCompositeName)];
-                        [sortedSection
-                            addObjectsFromArray:sortedSubSectionByFirstName];
-                        [subSection removeAllObjects];
-                    }
-                    currentLastName = lastName;
-                    [subSection addObject:contact];
-                }
-            }
-
-            NSArray *sortedSubSectionByFirstName = [
-                [LRIndexedCollationWithSearch currentCollation]
-                   sortedArrayFromArray:subSection
-                collationStringSelector:@selector(firstNameOrCompositeName)];
-            [sortedSection addObjectsFromArray:sortedSubSectionByFirstName];
+//            NSArray *sortedSubSectionByFirstName = [
+//                [LRIndexedCollationWithSearch currentCollation]
+//                   sortedArrayFromArray:subSection
+//                collationStringSelector:@selector(firstNameOrCompositeName)];
+//            [sortedSection addObjectsFromArray:sortedSubSectionByFirstName];
         }
 
-        self.partitionedContacts[i] = sortedSection;
+//        self.partitionedContacts[i] = sortedSection;
     }
 }
 
@@ -160,38 +160,38 @@
     APContact *contact = [self contactForRowAtIndexPath:indexPath];
     [self configureCell:cell forContact:contact];
 
-    if ([self.selectedPeople containsObject:contact.recordID]) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    } else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
+//    if ([self.selectedPeople containsObject:contact.recordID]) {
+//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//    } else {
+//        cell.accessoryType = UITableViewCellAccessoryNone;
+//    }
 
     return cell;
 }
 
 #pragma mark - ()
 - (void)configureCell:(UITableViewCell *)cell forContact:(APContact *)contact {
-    NSString *stringToHightlight =
-        contact.lastName ? contact.lastName : contact.compositeName;
-    NSRange rangeToHightlight =
-        [contact.compositeName rangeOfString:stringToHightlight];
-    NSMutableAttributedString *attributedString = [
-        [NSMutableAttributedString alloc] initWithString:contact.compositeName];
+//    NSString *stringToHightlight =
+//        contact.lastName ? contact.lastName : contact.compositeName;
+//    NSRange rangeToHightlight =
+//        [contact.compositeName rangeOfString:stringToHightlight];
+//    NSMutableAttributedString *attributedString = [
+//        [NSMutableAttributedString alloc] initWithString:contact.compositeName];
+//
+//    [attributedString beginEditing];
+//    [attributedString addAttribute:NSFontAttributeName
+//                             value:[UIFont boldSystemFontOfSize:18]
+//                             range:rangeToHightlight];
+//    if (![self shouldEnableCellforContact:contact]) {
+//        [attributedString addAttribute:NSForegroundColorAttributeName
+//                                 value:[UIColor grayColor]
+//                                 range:NSMakeRange(0, attributedString.length)];
+//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//    }
+//
+//    [attributedString endEditing];
 
-    [attributedString beginEditing];
-    [attributedString addAttribute:NSFontAttributeName
-                             value:[UIFont boldSystemFontOfSize:18]
-                             range:rangeToHightlight];
-    if (![self shouldEnableCellforContact:contact]) {
-        [attributedString addAttribute:NSForegroundColorAttributeName
-                                 value:[UIColor grayColor]
-                                 range:NSMakeRange(0, attributedString.length)];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
-
-    [attributedString endEditing];
-
-    cell.textLabel.attributedText = attributedString;
+//    cell.textLabel.attributedText = attributedString;
 }
 
 - (BOOL)shouldEnableCellforContact:(APContact *)contact {
@@ -199,13 +199,14 @@
         return YES;
     }
     else {
-    return ((self.filedMask & ZLContactFieldPhones) &&
-            contact.phones.count > 0) ||
-           ((self.filedMask & ZLContactFieldEmails) &&
-            contact.emails.count > 0) ||
-           ((self.filedMask & ZLContactFieldPhoto) && contact.thumbnail) ||
-           ((self.filedMask & ZLContactFieldAddresses) &&
-            contact.addresses.count > 0);
+        return YES;
+//    return ((self.filedMask & ZLContactFieldPhones) &&
+//            contact.phones.count > 0) ||
+//           ((self.filedMask & ZLContactFieldEmails) &&
+//            contact.emails.count > 0) ||
+//           ((self.filedMask & ZLContactFieldPhoto) && contact.thumbnail) ||
+//           ((self.filedMask & ZLContactFieldAddresses) &&
+//            contact.addresses.count > 0);
     }
 }
 
