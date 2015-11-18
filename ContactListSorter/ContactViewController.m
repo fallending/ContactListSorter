@@ -8,6 +8,7 @@
 
 #import "ContactViewController.h"
 #import "AppDelegate.h"
+#import "ZLResultsTableViewController.h"
 
 @interface ContactViewController () <
     UITableViewDelegate,
@@ -23,8 +24,12 @@
 // 名字索引
 @property (nonatomic, strong) GDIIndexBar *                 indexBar;
 
+// 刷新控件
+@property (nonatomic, strong) UIRefreshControl *            refreshControl;
+
 // 搜索栏
-@property (nonatomic, strong) UISearchController *searchController;
+@property (nonatomic, strong) UISearchController *          searchController;
+@property (nonatomic, strong) ZLResultsTableViewController *resultsTableViewController;
 
 @end
 
@@ -45,8 +50,27 @@
 }
 
 - (void)initSearchBar {
-    self.searchController   = [[UISearchController alloc] initWithSearchResultsController:nil];
+    self.resultsTableViewController = [[ZLResultsTableViewController alloc] init];
+    self.resultsTableViewController.tableView.delegate  = self;
     
+    self.searchController   = [[UISearchController alloc] initWithSearchResultsController:self.resultsTableViewController];
+    self.searchController.searchResultsUpdater  = self;
+    self.searchController.dimsBackgroundDuringPresentation  = NO;
+    [self.searchController.searchBar sizeToFit];
+    
+    self.tableView.tableHeaderView  = self.searchController.searchBar;
+    self.searchController.searchBar.delegate    = self;
+    
+    self.definesPresentationContext = YES;
+}
+
+- (void)initRefreshControl {
+    self.refreshControl     = [[UIRefreshControl alloc] init];
+    [self.tableView addSubview:self.refreshControl];
+    [self.refreshControl addTarget:self
+                            action:@selector(onRefreshControl)
+                  forControlEvents:UIControlEventValueChanged];
+    [self refreshControlAction:self.refreshControl];
 }
 
 #pragma mark - Life cycle
@@ -64,11 +88,61 @@
     [self initTableView];
     
     [self initSearchBar];
+    
+    [self initRefreshControl];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Action handler
+
+- (void)onRefreshControl {
+    [self refreshControlAction:self.refreshControl];
+}
+
+#pragma mark - Private method
+
+- (void)refreshControlAction:(UIRefreshControl *)aRefreshControl {
+    [aRefreshControl beginRefreshing];
+    [self reloadData:^(BOOL succeeded, NSError *error) {
+        [aRefreshControl endRefreshing];
+    }];
+}
+
+- (void)reloadData {
+//    [self reloadData:nil];
+}
+
+- (void)reloadData:(void (^)(BOOL succeeded, NSError *error))completionBlock {
+//    __weak __typeof(self) weakSelf = self;
+//    if ([ZLAddressBook sharedInstance].contacts.count > 0) {
+//        [weakSelf
+//         setPartitionedContactsWithContacts:[ZLAddressBook sharedInstance]
+//         .contacts];
+//        [weakSelf.tableView reloadData];
+//    }
+//    [[ZLAddressBook sharedInstance]
+//     loadContacts:^(BOOL succeeded, NSError *error) {
+//         if (!error) {
+//             [weakSelf setPartitionedContactsWithContacts:
+//              [ZLAddressBook sharedInstance].contacts];
+//             [weakSelf.tableView reloadData];
+//             if (completionBlock) {
+//                 completionBlock(YES, nil);
+//             }
+//         } else {
+//             if (completionBlock) {
+//                 completionBlock(NO, nil);
+//             }
+//         }
+//     }];
+    
+    if (completionBlock) {
+        completionBlock(YES, nil);
+    }
 }
 
 #pragma mark - UITableViewDelegate & UITableViewDataSource
@@ -116,7 +190,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if ([tableView isEqual:self.tableView]) {
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    } else if ([tableView isEqual:self.resultsTableViewController.tableView]) {
+        (void)[(ZLResultsTableViewController *)self.searchController.searchResultsController contactForRowAtIndexPath:indexPath];
+    }
 }
 
 #pragma mark - GDIIndexBarDelegate
