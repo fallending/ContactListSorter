@@ -42,10 +42,12 @@
     self.tableView.tableFooterView                      = [UIView new];
     
     [self.view addSubview:self.indexBar];
-    
-//    [self.indexBar reload];
 }
 
+- (void)initSearchBar {
+    self.searchController   = [[UISearchController alloc] initWithSearchResultsController:nil];
+    
+}
 
 #pragma mark - Life cycle
 
@@ -60,6 +62,8 @@
     [self initData];
     
     [self initTableView];
+    
+    [self initSearchBar];
 }
 
 - (void)didReceiveMemoryWarning {
