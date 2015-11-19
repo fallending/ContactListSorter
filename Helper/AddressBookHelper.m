@@ -17,4 +17,8 @@
     return _sharedObject;
 }
 
+- (void)loadContacts:(void (^)(BOOL, NSError *))completionBlock {
+    
+}
+
 @end

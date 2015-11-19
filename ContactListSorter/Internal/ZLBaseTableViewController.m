@@ -8,9 +8,7 @@
 
 #import "ZLBaseTableViewController.h"
 #import "LRIndexedCollationWithSearch.h"
-
-//#import "APContact.h"
-//#import "APContact+Sorting.h"
+#import "AppDelegate.h"
 
 @implementation ZLBaseTableViewController
 
@@ -146,31 +144,23 @@
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     UITableViewCell *cell = (UITableViewCell *)
-        [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
+        [tableView dequeueReusableCellWithIdentifier:[UITableViewCell identifier]];
 
     if (cell == nil) {
         cell =
             [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-                                   reuseIdentifier:kCellIdentifier];
-        // cell.accessoryView = nil;
+                                   reuseIdentifier:[UITableViewCell identifier]];
         cell.accessoryType = UITableViewCellAccessoryNone;
-        // cell.selectionStyle = UITableViewCellSelectionStyleDefault;
     }
 
-    APContact *contact = [self contactForRowAtIndexPath:indexPath];
+    ContactModel *contact = [self contactForRowAtIndexPath:indexPath];
     [self configureCell:cell forContact:contact];
-
-//    if ([self.selectedPeople containsObject:contact.recordID]) {
-//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//    } else {
-//        cell.accessoryType = UITableViewCellAccessoryNone;
-//    }
 
     return cell;
 }
 
 #pragma mark - ()
-- (void)configureCell:(UITableViewCell *)cell forContact:(APContact *)contact {
+- (void)configureCell:(UITableViewCell *)cell forContact:(ContactModel *)contact {
 //    NSString *stringToHightlight =
 //        contact.lastName ? contact.lastName : contact.compositeName;
 //    NSRange rangeToHightlight =
@@ -194,11 +184,11 @@
 //    cell.textLabel.attributedText = attributedString;
 }
 
-- (BOOL)shouldEnableCellforContact:(APContact *)contact {
-    if(self.filedMask == ZLContactFieldAll) {
-        return YES;
-    }
-    else {
+- (BOOL)shouldEnableCellforContact:(ContactModel *)contact {
+//    if(self.filedMask == ZLContactFieldAll) {
+//        return YES;
+//    }
+//    else {
         return YES;
 //    return ((self.filedMask & ZLContactFieldPhones) &&
 //            contact.phones.count > 0) ||
@@ -207,10 +197,10 @@
 //           ((self.filedMask & ZLContactFieldPhoto) && contact.thumbnail) ||
 //           ((self.filedMask & ZLContactFieldAddresses) &&
 //            contact.addresses.count > 0);
-    }
+//    }
 }
 
-- (APContact *)contactForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (ContactModel *)contactForRowAtIndexPath:(NSIndexPath *)indexPath {
     return
         [[self.partitionedContacts objectAtIndex:(NSUInteger)indexPath.section]
             objectAtIndex:(NSUInteger)indexPath.row];
