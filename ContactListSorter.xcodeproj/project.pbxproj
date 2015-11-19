@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6A032B051BFAD4C60019B302 /* GDIIndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A032B041BFAD4C60019B302 /* GDIIndexBar.m */; };
 		6A0743381BFCE7E800999BD2 /* LRIndexedCollationWithSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0743371BFCE7E800999BD2 /* LRIndexedCollationWithSearch.m */; };
+		6A07433B1BFCE9D000999BD2 /* AddressBookHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A07433A1BFCE9D000999BD2 /* AddressBookHelper.m */; };
 		6A1468C51BF60D5900D718F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1468C41BF60D5900D718F5 /* main.m */; };
 		6A1468C81BF60D5900D718F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1468C71BF60D5900D718F5 /* AppDelegate.m */; };
 		6A1468CB1BF60D5900D718F5 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1468CA1BF60D5900D718F5 /* ContactViewController.m */; };
@@ -42,6 +43,8 @@
 		6A032B041BFAD4C60019B302 /* GDIIndexBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIIndexBar.m; sourceTree = "<group>"; };
 		6A0743361BFCE7E800999BD2 /* LRIndexedCollationWithSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRIndexedCollationWithSearch.h; sourceTree = "<group>"; };
 		6A0743371BFCE7E800999BD2 /* LRIndexedCollationWithSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRIndexedCollationWithSearch.m; sourceTree = "<group>"; };
+		6A0743391BFCE9D000999BD2 /* AddressBookHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookHelper.h; sourceTree = "<group>"; };
+		6A07433A1BFCE9D000999BD2 /* AddressBookHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookHelper.m; sourceTree = "<group>"; };
 		6A1468C01BF60D5900D718F5 /* ContactListSorter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactListSorter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A1468C41BF60D5900D718F5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6A1468C61BF60D5900D718F5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -167,6 +170,8 @@
 				6A1468F11BF8D21200D718F5 /* extension */,
 				6A1468F51BF8D22D00D718F5 /* ContactHelper.h */,
 				6A1468F61BF8D22D00D718F5 /* ContactHelper.m */,
+				6A0743391BFCE9D000999BD2 /* AddressBookHelper.h */,
+				6A07433A1BFCE9D000999BD2 /* AddressBookHelper.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -323,6 +328,7 @@
 				6A258BD31BFC897300AD72DA /* ZLAddressBook.m in Sources */,
 				6A258BD51BFC897300AD72DA /* ZLResultsTableViewController.m in Sources */,
 				6A1469061BF9A1AC00D718F5 /* NSString+HTLetter.m in Sources */,
+				6A07433B1BFCE9D000999BD2 /* AddressBookHelper.m in Sources */,
 				6AA58FCE1BFB3D840015FA27 /* NSString+Wrapper.m in Sources */,
 				6A1469051BF9A1AC00D718F5 /* NSArray+HTLetter.m in Sources */,
 				6A1469081BF9A1AC00D718F5 /* Pinyin.m in Sources */,

@@ -2,6 +2,7 @@
 ## 感谢
 1. 原始项目：[youran1024/HTLetterManger](https://github.com/youran1024/HTLetterManger)
 2. 引用项目：[gdavis/GDIIndexBar](https://github.com/gdavis/GDIIndexBar)
+3. 参考项目 1：[zhxnlai/ZLPeoplePickerViewController](https://github.com/zhxnlai/ZLPeoplePickerViewController)
 
 ## 基于原始项目做了什么？
 
