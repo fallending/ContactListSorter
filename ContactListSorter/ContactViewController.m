@@ -55,7 +55,7 @@
     
     self.searchController   = [[UISearchController alloc] initWithSearchResultsController:self.resultsTableViewController];
     self.searchController.searchResultsUpdater  = self;
-    self.searchController.dimsBackgroundDuringPresentation  = NO;
+//    self.searchController.dimsBackgroundDuringPresentation  = NO;
     [self.searchController.searchBar sizeToFit];
     
     self.tableView.tableHeaderView  = self.searchController.searchBar;

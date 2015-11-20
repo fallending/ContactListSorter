@@ -173,6 +173,7 @@
  * 通过递归方法实现
  *
  * @param search 输入的拼音字母
+ * @param searchIndex 是对输入的拼音字符的索引
  * @param pinyin 汉字拼音数组，通过pinyin4j获取汉字拼音 @see http://pinyin4j.sourceforge.net/
  * @return 匹配成功返回 true
  * @author 黄海晏
@@ -198,10 +199,14 @@
         (search.length == 1 || bSecondCharToMatch);//如果仅是1个字符，算匹配，否则从第二个字符开始比较
     }
     
-    BOOL bStringInArrayNotOverflow  = [pinyin[wordIndex] length] > wordStart; // 数组中的字串，相对wordStart不越界
-    BOOL bArrayNotOverflow          = [pinyin count] > wordIndex + 1;
-    BOOL bCharMatch = [search characterAtIndex:searchIndex] == [pinyin charAtObjectIndex:wordIndex atCharacterIndex:wordStart]; // 常规匹配
-    
+    BOOL bStringInArrayNotOverflow  = (pinyin[wordIndex].length > wordStart) &&
+    (search.length > searchIndex); // 数组中的字串，相对wordStart不越界
+    BOOL bArrayNotOverflow          = ([pinyin count] > wordIndex + 1) &&
+    (search.length > searchIndex);
+    BOOL bCharMatch = NO;
+    if (bStringInArrayNotOverflow) {
+       bCharMatch   = [search characterAtIndex:searchIndex] == [pinyin charAtObjectIndex:wordIndex atCharacterIndex:wordStart]; // 常规匹配
+    }
     
     if (bStringInArrayNotOverflow && //判断不越界
         bCharMatch) {                //判断匹配
@@ -246,35 +251,39 @@
 - (NSArray *)filteredArrayWithSearchingString:(NSString *)search reduceByPropertyKey:(NSString *)key {
     __block NSMutableArray *results = [@[] mutableCopy];
     
-    [self enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        // 输出指定属性
-        NSString *hanyu = [obj valueForKey:key];
-        
-        // 断言 NSString 类型
-        NSAssert([hanyu isKindOfClass:NSString.class], @"应该为字符串类型！！");
-        
-        // 输出汉语拼音
-        NSString *seperater = @"~";
-        HanyuPinyinOutputFormat *outputFormat=[[HanyuPinyinOutputFormat alloc] init];
-        [outputFormat setToneType:ToneTypeWithoutTone];
-        [outputFormat setVCharType:VCharTypeWithV];
-        [outputFormat setCaseType:CaseTypeLowercase];
-        NSString *outputPinyin      =[PinyinHelper toHanyuPinyinStringWithNSString:hanyu
-                                                       withHanyuPinyinOutputFormat:outputFormat withNSString:@" "];
-        NSArray *outputPinyinArray  = [outputPinyin componentsSeparatedByString:seperater];
-        
-        // 断言 拼音数组不为空
-        NSAssert([outputPinyinArray count]>0, @"输出的汉语拼音为空");
-        
-        // 匹配 名称
-        if ([self distinguish:search
-              withSearchIndex:0
-                     inPinyin:outputPinyinArray
-                    wordIndex:0
-                    wordStart:0]) {
-            [results addObject:[self objectAtIndex:idx]];
-        }
-    }];
+    // 搜索串为空，则返回空
+    if ([search length]) {
+        [self enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            // 输出指定属性
+            NSString *hanyu = [obj valueForKey:key];
+            
+            // 断言 NSString 类型
+            NSAssert([hanyu isKindOfClass:NSString.class], @"应该为字符串类型！！");
+            
+            // 输出汉语拼音
+            NSString *seperater = @"~";
+            HanyuPinyinOutputFormat *outputFormat=[[HanyuPinyinOutputFormat alloc] init];
+            [outputFormat setToneType:ToneTypeWithoutTone];
+            [outputFormat setVCharType:VCharTypeWithV];
+            [outputFormat setCaseType:CaseTypeLowercase];
+            NSString *outputPinyin      =[PinyinHelper toHanyuPinyinStringWithNSString:hanyu
+                                                           withHanyuPinyinOutputFormat:outputFormat
+                                                                          withNSString:seperater];
+            NSArray *outputPinyinArray  = [outputPinyin componentsSeparatedByString:seperater];
+            
+            // 断言 拼音数组不为空
+            NSAssert([outputPinyinArray count]>0, @"输出的汉语拼音为空");
+            
+            // 匹配 名称
+            if ([self distinguish:search
+                  withSearchIndex:0
+                         inPinyin:outputPinyinArray
+                        wordIndex:0
+                        wordStart:0]) {
+                [results addObject:[self objectAtIndex:idx]];
+            }
+        }];
+    }
     
     return results;
 }

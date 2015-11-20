@@ -10,6 +10,13 @@
 #import "LRIndexedCollationWithSearch.h"
 #import "AppDelegate.h"
 
+@interface BaseTableViewController ()
+
+@property (nonatomic, strong) NSMutableArray<NSString *> *  sectionTitles;
+@property (nonatomic, strong) NSMutableDictionary *         dataSource;
+
+@end
+
 @implementation BaseTableViewController
 
 #pragma mark - Properties
@@ -29,39 +36,23 @@
 
 - (void)setPartitionedContactsWithContacts:(NSArray *)contacts {
     self.partitionedContacts = [contacts mutableCopy];
+    self.dataSource = (NSMutableDictionary *)[contacts sortedDictionaryWithPropertyKey:@"name"];
+    self.sectionTitles = [[[self.dataSource allKeys] sortedArrayUsingSelector:@selector(compare:)] mutableCopy];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    if (self.partitionedContacts.count > 0) {
-        return [self.partitionedContacts count];
-    }
-    return 0;
+    return [self.sectionTitles count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView
     titleForHeaderInSection:(NSInteger)section {
-    if ((NSInteger)[[self.partitionedContacts
-            objectAtIndex:(NSUInteger)section] count] == 0) {
-        return @"";
-    }
-    
-    NSDictionary *dataSource    = (NSMutableDictionary *)[self.partitionedContacts sortedDictionaryWithPropertyKey:@"name"];
-    NSArray *sectionTitles      = [[dataSource allKeys] sortedArrayUsingSelector:@selector(compare:)];
-    
-    return [sectionTitles objectAtIndex:section];
+    return [self.sectionTitles objectAtIndex:section];
 }
 
-// 不显示SectionIndexes
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-    if (self.partitionedContacts.count > 0) {
-        NSDictionary *dataSource = (NSMutableDictionary *)[self.partitionedContacts sortedDictionaryWithPropertyKey:@"name"];
-        
-        return [[dataSource allKeys] sortedArrayUsingSelector:@selector(compare:)];
-    }
-    
-    return nil;
+    return self.sectionTitles;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
@@ -71,16 +62,15 @@
         sectionForSectionIndexTitleAtIndex:index];
     if (ret == NSNotFound) {
         [self.tableView
-            setContentOffset:CGPointMake(0.0,
-                                         -self.tableView.contentInset.top)];
+            setContentOffset:CGPointMake(0.0,-self.tableView.contentInset.top)];
     }
     return ret;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
     numberOfRowsInSection:(NSInteger)section {
-    return (NSInteger)[
-        [self.partitionedContacts objectAtIndex:(NSUInteger)section] count];
+    id key = [self.sectionTitles objectAtIndex:section];
+    return [[self.dataSource objectForKey:key] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -148,9 +138,8 @@
 }
 
 - (ContactModel *)contactForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return
-        [[self.partitionedContacts objectAtIndex:(NSUInteger)indexPath.section]
-            objectAtIndex:(NSUInteger)indexPath.row];
+    id key = [self.sectionTitles objectAtIndex:indexPath.section];
+    return [[self.dataSource objectForKey:key] objectAtIndex:indexPath.row];
 }
 
 - (NSMutableArray *)emptyPartitionedArray {
