@@ -15,6 +15,8 @@
 6. 将通讯录数据处理的独立：ContactHelper，便于做额外的数据操作
 7. 引入索引侧边栏
 
+8. 引入项目PinYin4Objc，原始项目功能被弱化
+
 ## 项目原文件介绍：
 
 * HTLetter/HTLetter.h：该模块的汇总头文件
