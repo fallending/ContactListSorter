@@ -33,7 +33,7 @@
 
 #pragma mark - ContactModel
 
-@interface ContactModel : NSObject
+@interface ContactModel : NSObject // TODO: 应该继承 iOS 的AddressBook
 
 @property (nonatomic, copy) NSString *name; // 原名字或昵称
 @property (nonatomic, copy) NSString *mark; // 备注

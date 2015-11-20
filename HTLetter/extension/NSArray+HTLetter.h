@@ -28,6 +28,11 @@
  */
 - (NSDictionary *)sortedDictionaryWithPropertyKey:(NSString *)propertyKey;
 
+/**
+ *  排序过的，二维数组：一维是section，第二维是row
+ */
+- (NSArray *)sortedArrayWithPropertykey:(NSString *)propertyKey;
+
 @end
 
 #pragma mark - 拼音匹配
@@ -46,13 +51,28 @@
  */
 
 
-// 如何支持中英文？？？
+// TODO: 如何支持中英文？？？
+// TODO: 速度优化
 @interface NSArray ( PinyinMatch )
 
 /**
  *  参考：http://blog.csdn.net/nanman/article/details/6062764
- 
  */
-- (NSArray *)filteredArrayWithSearchingString:(NSString *)search;
+
+/**
+ *  输入：Model数组
+ */
+- (NSArray *)filteredArrayWithSearchingString:(NSString *)search reduceByPropertyKey:(NSString *)key;
+
+@end
+
+#pragma mark - 模型数组降维
+
+@interface NSArray ( DimensionReduce )
+
+/**
+ *  取出模型的某个字段，将数组返回
+ */
+- (NSArray *)arrayReduceByPropertyKey:(NSString *)propertyKey;
 
 @end

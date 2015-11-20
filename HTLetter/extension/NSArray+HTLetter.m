@@ -118,6 +118,15 @@
     return mutDic;
 }
 
+- (NSArray *)sortedArrayWithPropertykey:(NSString *)propertyKey {
+    NSDictionary *selfDict   = [self sortedDictionaryWithPropertyKey:propertyKey];
+    NSMutableArray *sortedArray = [NSMutableArray new];
+    
+    [sortedArray addObjectsFromArray:selfDict.allValues];
+    
+    return sortedArray;
+}
+
 @end
 
 #pragma mark - 拼音匹配
@@ -234,41 +243,60 @@
     return false;
 }
 
-- (NSArray *)filteredArrayWithSearchingString:(NSString *)search {
+- (NSArray *)filteredArrayWithSearchingString:(NSString *)search reduceByPropertyKey:(NSString *)key {
     __block NSMutableArray *results = [@[] mutableCopy];
-    NSMutableArray *pinyins = [@[] mutableCopy];
     
-    // 这个可以独立出，
-    // 或者作出一个context，一开始舒适化好，适当的时候reinit～～
-    // todo-fa：
     [self enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSString *sourceText=@"我爱中文";
+        // 输出指定属性
+        NSString *hanyu = [obj valueForKey:key];
+        
+        // 断言 NSString 类型
+        NSAssert([hanyu isKindOfClass:NSString.class], @"应该为字符串类型！！");
+        
+        // 输出汉语拼音
         NSString *seperater = @"~";
         HanyuPinyinOutputFormat *outputFormat=[[HanyuPinyinOutputFormat alloc] init];
         [outputFormat setToneType:ToneTypeWithoutTone];
         [outputFormat setVCharType:VCharTypeWithV];
         [outputFormat setCaseType:CaseTypeLowercase];
-        NSString *outputPinyin      =[PinyinHelper toHanyuPinyinStringWithNSString:sourceText
+        NSString *outputPinyin      =[PinyinHelper toHanyuPinyinStringWithNSString:hanyu
                                                        withHanyuPinyinOutputFormat:outputFormat withNSString:@" "];
         NSArray *outputPinyinArray  = [outputPinyin componentsSeparatedByString:seperater];
         
+        // 断言 拼音数组不为空
         NSAssert([outputPinyinArray count]>0, @"输出的汉语拼音为空");
         
-        [pinyins addObject:outputPinyinArray];
-        
-    }];
-    
-    [pinyins enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-       if ([self distinguish:search
-             withSearchIndex:0
-                    inPinyin:obj
-                   wordIndex:0
-                   wordStart:0]) {
-           [results addObject:[self objectAtIndex:idx]];
-       }
+        // 匹配 名称
+        if ([self distinguish:search
+              withSearchIndex:0
+                     inPinyin:outputPinyinArray
+                    wordIndex:0
+                    wordStart:0]) {
+            [results addObject:[self objectAtIndex:idx]];
+        }
     }];
     
     return results;
 }
 
 @end
+
+#pragma mark - 模型数组降维
+
+@implementation NSArray ( DimensionReduce )
+
+- (NSArray *)arrayReduceByPropertyKey:(NSString *)propertyKey {
+    NSMutableArray *arrayReduced    = [NSMutableArray new];
+    
+    for (id obj in self) {
+        id property = [obj valueForKey:propertyKey];
+        
+        [arrayReduced addObject:property];
+    }
+    
+    return arrayReduced;
+}
+
+@end
+
+

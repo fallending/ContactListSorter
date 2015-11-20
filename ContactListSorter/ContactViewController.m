@@ -237,8 +237,8 @@
 
 - (void)updateSearchResultsForSearchController:
 (UISearchController *)searchController {
-//    // update the filtered array based on the search text
-//    NSString *searchText = searchController.searchBar.text;
+    // update the filtered array based on the search text
+    NSString *searchText = searchController.searchBar.text;
 //    NSMutableArray *searchResults = [[self.partitionedContacts
 //                                      valueForKeyPath:@"@unionOfArrays.self"] mutableCopy];
 //    
@@ -318,13 +318,18 @@
 //    
 //    searchResults = [[searchResults
 //                      filteredArrayUsingPredicate:finalCompoundPredicate] mutableCopy];
-//    
+//
+    
+    // Search phone number contacts
+    NSArray *searchResults  = [self.helper.contacts filteredArrayWithSearchingString:searchText
+                                                                 reduceByPropertyKey:@"name"];
+    
 //    // hand over the filtered results to our search results table
     ResultsTableViewController *tableController =
     (ResultsTableViewController *)
     self.searchController.searchResultsController;
     tableController.selectedPeople = [self.helper.contacts mutableCopy];
-//    [tableController setPartitionedContactsWithContacts:searchResults];
+    [tableController setPartitionedContactsWithContacts:searchResults];
     [tableController.tableView reloadData];
 }
 
