@@ -134,8 +134,6 @@
 @implementation NSArray ( PinyinMatch )
 
 - (char)charAtObjectIndex:(NSInteger)objectIndex atCharacterIndex:(NSInteger)charIndex {
-    NSAssert([[self objectAtIndex:0] isKindOfClass:NSString.class], @"类型不符");
-    
     return [(NSString *)[self objectAtIndex:objectIndex] characterAtIndex:charIndex];
 }
 
@@ -222,7 +220,7 @@
                 wordIndex:wordIndex
                 wordStart:wordStart];   // 同一个字拼音连续匹配
     } else if (bArrayNotOverflow &&     //判断不越界
-               [search characterAtIndex:searchIndex] == [self charAtObjectIndex:wordIndex+1 atCharacterIndex:0]) { //不能拼音连续匹配的情况下，看看下一个字拼音的首字母是否能匹配
+               [search characterAtIndex:searchIndex] == [pinyin charAtObjectIndex:wordIndex+1 atCharacterIndex:0]) { //不能拼音连续匹配的情况下，看看下一个字拼音的首字母是否能匹配
         return searchIndex == [search length] - 1 ?
         [self distinguish:search
                  inPinyin:pinyin
