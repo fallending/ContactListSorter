@@ -10,6 +10,7 @@
 #import "NSString+HTLetter.h"
 #import "pinyin.h"
 #import "NSString+Wrapper.h"
+#import "PinYin4Objc.h"
 
 @implementation NSArray (HTLetter)
 
@@ -124,25 +125,29 @@
 @implementation NSArray ( PinyinMatch )
 
 - (char)charAtObjectIndex:(NSInteger)objectIndex atCharacterIndex:(NSInteger)charIndex {
-    return 0;
+    NSAssert([[self objectAtIndex:0] isKindOfClass:NSString.class], @"类型不符");
+    
+    return [(NSString *)[self objectAtIndex:objectIndex] characterAtIndex:charIndex];
 }
 
 /**
+ * 源代码链接：http://blog.csdn.net/nanman/article/details/6062764
+ 
  * 辅佐函数，确保pinyin[n].charAt(0)(n<=wordIndex)都按顺序依次出现在search里面
  * 防止zhou ming zhong匹配zz，跳过了ming
  *
- * @param search
- * @param pinyin
+ * @param search    如：@"zgr"
+ * @param pinyin    如：张国荣 则是 @[@"zhang", @"guo", @"rong"]
  * @param wordIndex 已经匹配到拼音索引
  * @return 都按顺序依次出现了，返回true
  */
-- (BOOL)distinguish:(NSString *)search withWordIndex:(int)wordIndex {
+- (BOOL)distinguish:(NSString *)search inPinyin:(NSArray<NSString *> *)pinyin withWordIndex:(int)wordIndex {
     NSString *searchString  = [NSString stringWithString:search];
     int lastIndex   = 0;
     int i           = 0;
     
     for (i = 0; i < wordIndex; i++) {
-        char c      = [[self objectAtIndex:i] characterAtIndex:0];
+        char c      = [[pinyin objectAtIndex:i] characterAtIndex:0];
         lastIndex   = [searchString indexOfChar:c fromIndex:lastIndex];
         
         if (lastIndex == -1) return NO;
@@ -163,31 +168,64 @@
  * @return 匹配成功返回 true
  * @author 黄海晏
  */
-- (BOOL)distinguish:(NSString *)search withSearchIndex:(int)searchIndex wordIndex:(int)wordIndex wordStart:(int)wordStart {
+- (BOOL)distinguish:(NSString *)search
+    withSearchIndex:(int)searchIndex
+           inPinyin:(NSArray<NSString *> *)pinyin
+          wordIndex:(int)wordIndex // 默认 0
+          wordStart:(int)wordStart // 默认 0，后续会递归下去
+{
+    //
     if (searchIndex == 0) {
-        return
-        [search characterAtIndex:0] == [self charAtObjectIndex:0 atCharacterIndex:0] // 第一个必须匹配
-        &&
-        (search.length == 1 ||
-         [self distinguish:search withSearchIndex:1 wordIndex:0 wordStart:1]
-         );//如果仅是1个字符，算匹配，否则从第二个字符开始比较
+        // 第一个必须匹配
+        BOOL bFirstCharMatch    = [search characterAtIndex:0] == [pinyin charAtObjectIndex:0 atCharacterIndex:0];
+        // 从第二个字符还是比较
+        BOOL bSecondCharToMatch = [self distinguish:search
+                                    withSearchIndex:1
+                                           inPinyin:pinyin
+                                          wordIndex:0
+                                          wordStart:1];
+        
+        return bFirstCharMatch &&
+        (search.length == 1 || bSecondCharToMatch);//如果仅是1个字符，算匹配，否则从第二个字符开始比较
     }
     
-    if ([self[wordIndex] length] > wordStart //判断不越界
-        &&
-        [search characterAtIndex:searchIndex] == [self charAtObjectIndex:wordIndex atCharacterIndex:wordStart]) {//判断匹配
-        return searchIndex == [search length] - 1 ? [self distinguish:search withWordIndex:wordIndex]
+    BOOL bStringInArrayNotOverflow  = [pinyin[wordIndex] length] > wordStart; // 数组中的字串，相对wordStart不越界
+    BOOL bArrayNotOverflow          = [pinyin count] > wordIndex + 1;
+    BOOL bCharMatch = [search characterAtIndex:searchIndex] == [pinyin charAtObjectIndex:wordIndex atCharacterIndex:wordStart]; // 常规匹配
+    
+    
+    if (bStringInArrayNotOverflow && //判断不越界
+        bCharMatch) {                //判断匹配
+        return searchIndex == [search length] - 1 ?
+        [self distinguish:search
+                 inPinyin:pinyin
+            withWordIndex:wordIndex]
         //如果这是最后一个字符，检查之前的声母是否依次出现
         :
-        [self distinguish:search withSearchIndex:searchIndex + 1 wordIndex:wordIndex wordStart:wordStart];// 同一个字拼音连续匹配
-    } else if ([self count] > wordIndex + 1 //判断不越界
-               &&
+        [self distinguish:search
+          withSearchIndex:searchIndex + 1
+                 inPinyin:pinyin
+                wordIndex:wordIndex
+                wordStart:wordStart];   // 同一个字拼音连续匹配
+    } else if (bArrayNotOverflow &&     //判断不越界
                [search characterAtIndex:searchIndex] == [self charAtObjectIndex:wordIndex+1 atCharacterIndex:0]) { //不能拼音连续匹配的情况下，看看下一个字拼音的首字母是否能匹配
-        return searchIndex == [search length] - 1 ? [self distinguish:search withWordIndex:wordIndex] //如果这是最后一个字符，检查之前的声母是否依次出现
-        : [self distinguish:search withSearchIndex:searchIndex+1 wordIndex:wordIndex+1 wordStart:1];//去判断下一个字拼音的第二个字母
-    } else if ([self count] > wordIndex + 1) {//回退试试看  对于zhuang an lan  searchIndex > 1 &&
+        return searchIndex == [search length] - 1 ?
+        [self distinguish:search
+                 inPinyin:pinyin
+            withWordIndex:wordIndex] //如果这是最后一个字符，检查之前的声母是否依次出现
+        :
+        [self distinguish:search
+          withSearchIndex:searchIndex+1
+                 inPinyin:pinyin
+                wordIndex:wordIndex+1
+                wordStart:1];//去判断下一个字拼音的第二个字母
+    } else if (bArrayNotOverflow) {//回退试试看  对于zhuang an lan  searchIndex > 1 &&
         for (int i = 1; i < searchIndex; i++) {
-            if ([self distinguish:search withSearchIndex:searchIndex-i wordIndex:wordIndex+1 wordStart:0]) {
+            if ([self distinguish:search
+                  withSearchIndex:searchIndex-i
+                         inPinyin:pinyin
+                        wordIndex:wordIndex+1
+                        wordStart:0]) {
                 return true;
             }
         }
@@ -196,13 +234,41 @@
     return false;
 }
 
-
-
 - (NSArray *)filteredArrayWithSearchingString:(NSString *)search {
+    __block NSMutableArray *results = [@[] mutableCopy];
+    NSMutableArray *pinyins = [@[] mutableCopy];
     
+    // 这个可以独立出，
+    // 或者作出一个context，一开始舒适化好，适当的时候reinit～～
+    // todo-fa：
+    [self enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSString *sourceText=@"我爱中文";
+        NSString *seperater = @"~";
+        HanyuPinyinOutputFormat *outputFormat=[[HanyuPinyinOutputFormat alloc] init];
+        [outputFormat setToneType:ToneTypeWithoutTone];
+        [outputFormat setVCharType:VCharTypeWithV];
+        [outputFormat setCaseType:CaseTypeLowercase];
+        NSString *outputPinyin      =[PinyinHelper toHanyuPinyinStringWithNSString:sourceText
+                                                       withHanyuPinyinOutputFormat:outputFormat withNSString:@" "];
+        NSArray *outputPinyinArray  = [outputPinyin componentsSeparatedByString:seperater];
+        
+        NSAssert([outputPinyinArray count]>0, @"输出的汉语拼音为空");
+        
+        [pinyins addObject:outputPinyinArray];
+        
+    }];
     
+    [pinyins enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+       if ([self distinguish:search
+             withSearchIndex:0
+                    inPinyin:obj
+                   wordIndex:0
+                   wordStart:0]) {
+           [results addObject:[self objectAtIndex:idx]];
+       }
+    }];
     
-    return self;
+    return results;
 }
 
 @end

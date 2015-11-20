@@ -32,6 +32,21 @@
 
 #pragma mark - 拼音匹配
 
+/**
+ *  调用该情况的前提：array的基本结构如下
+ 
+ *  @[@"张国荣",
+ *    @"刘德华"]
+ 
+ *  实现中会有一层转化，如下
+ 
+ *  @[@[@"zhang", @"guo", @"rong"],
+ *    @[@"liu", @"de", @"hua"]]
+ 
+ */
+
+
+// 如何支持中英文？？？
 @interface NSArray ( PinyinMatch )
 
 /**

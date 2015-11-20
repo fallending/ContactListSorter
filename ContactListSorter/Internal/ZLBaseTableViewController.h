@@ -21,3 +21,20 @@
 - (ContactModel *)contactForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
+
+
+#pragma mark - Search delegate
+
+@protocol BaseSearchDelegate <NSObject>
+
+/**
+ *  分段的标题数组
+ */
+- (NSArray<NSString *> *)sectionTitlesOfSearchController:(ZLBaseTableViewController *)search;
+
+/**
+ *
+ */
+
+
+@end

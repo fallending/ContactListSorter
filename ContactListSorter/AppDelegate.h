@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "UITableViewCell+Base.h"
+#import "UISearchBar+Config.h"
 
 #import "ContactHelper.h"
 #import "HTLetter.h"

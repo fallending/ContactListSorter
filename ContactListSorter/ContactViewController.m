@@ -51,7 +51,6 @@
 
 - (void)initSearchBar {
     self.resultsTableViewController = [[ZLResultsTableViewController alloc] init];
-    self.resultsTableViewController.tableView.delegate  = self;
     
     self.searchController   = [[UISearchController alloc] initWithSearchResultsController:self.resultsTableViewController];
     self.searchController.searchResultsUpdater  = self;
@@ -60,7 +59,7 @@
     
     self.tableView.tableHeaderView  = self.searchController.searchBar;
     self.searchController.searchBar.delegate    = self;
-    
+
     self.definesPresentationContext = YES;
 }
 
@@ -192,8 +191,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([tableView isEqual:self.tableView]) {
         [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-    } else if ([tableView isEqual:self.resultsTableViewController.tableView]) {
-        (void)[(ZLResultsTableViewController *)self.searchController.searchResultsController contactForRowAtIndexPath:indexPath];
     }
 }
 
@@ -221,6 +218,8 @@
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)aSearchBar {
     [aSearchBar setShowsCancelButton:YES animated:YES];
+    
+    [self.searchController.searchBar setTitle:@"取消"];
 }
 
 - (void)searchBarTextDidEndEditing:(UISearchBar *)aSearchBar {
@@ -318,13 +317,12 @@
 //                      filteredArrayUsingPredicate:finalCompoundPredicate] mutableCopy];
 //    
 //    // hand over the filtered results to our search results table
-//    ZLResultsTableViewController *tableController =
-//    (ZLResultsTableViewController *)
-//    self.searchController.searchResultsController;
-//    tableController.filedMask = self.filedMask;
-//    tableController.selectedPeople = self.selectedPeople;
+    ZLResultsTableViewController *tableController =
+    (ZLResultsTableViewController *)
+    self.searchController.searchResultsController;
+    tableController.selectedPeople = [self.helper.contacts mutableCopy];
 //    [tableController setPartitionedContactsWithContacts:searchResults];
-//    [tableController.tableView reloadData];
+    [tableController.tableView reloadData];
 }
 
 #pragma mark - Property

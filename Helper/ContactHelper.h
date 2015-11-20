@@ -8,9 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class ContactModel;
+
 @interface ContactHelper : NSObject
 
-@property (nonatomic, strong) NSArray *contacts; // 原始联系人，默认排序
+@property (nonatomic, strong, readonly) NSArray<ContactModel *> *contacts; // 原始联系人，默认排序
+@property (nonatomic, strong, readonly) NSArray<NSString *> *   contactNames;
+@property (nonatomic, strong, readonly) NSArray<NSString *> *   contactMarks;
+@property (nonatomic, strong, readonly) NSArray<NSString *> *   contactEngs;
 
 // 默认初始化
 - (void)initCommonly;
@@ -19,7 +24,7 @@
 - (void)initWithPlist:(NSString *)filename;
 
 // 获取section titles
-- (NSArray *)contactTableSectionTitles;
+- (NSArray<NSString *> *)contactTableSectionTitles;
 
 // 获取section、row二维model数组
 - (NSDictionary *)contactTableDataSource;

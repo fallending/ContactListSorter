@@ -117,9 +117,10 @@
         objectAtIndex:section];
 }
 
-- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-    return [[LRIndexedCollationWithSearch currentCollation] sectionIndexTitles];
-}
+// 不显示SectionIndexes
+//- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+//    return [[LRIndexedCollationWithSearch currentCollation] sectionIndexTitles];
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView
     sectionForSectionIndexTitle:(NSString *)title

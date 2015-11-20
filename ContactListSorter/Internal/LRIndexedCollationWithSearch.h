@@ -32,7 +32,7 @@
 @property (nonatomic, readonly) NSArray *sectionIndexTitles;
 
 + (id)currentCollation;
-- (id)initWithCollation:(UILocalizedIndexedCollation *)collation;
+- (id)initWithCollation:(UILocalizedIndexedCollation *)collation; // http://www.cnblogs.com/ningxu-ios/p/4183542.html
 
 - (NSInteger)sectionForObject:(id)object collationStringSelector:(SEL)selector;
 - (NSInteger)sectionForSectionIndexTitleAtIndex:(NSInteger)indexTitleIndex;

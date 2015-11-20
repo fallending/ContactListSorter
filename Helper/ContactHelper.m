@@ -11,8 +11,12 @@
 #import "ContactHelper.h"
 #import "AppDelegate.h"
 
-@interface ContactHelper ()
-
+@interface ContactHelper () {
+    NSMutableArray *_contacts;
+    NSMutableArray *_contactNames;
+    NSMutableArray *_contactMarks;
+    NSMutableArray *_contactEngs;
+}
 @property (nonatomic, strong) NSMutableArray *sectionTitles;
 @property (nonatomic, strong) NSMutableDictionary *dataSource;
 
@@ -24,14 +28,16 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        self.contacts   = [NSMutableArray new];
+        _contacts       = [NSMutableArray new];
+        _contactNames   = [NSMutableArray new];
+        _contactMarks   = [NSMutableArray new];
+        _contactEngs    = [NSMutableArray new];
     }
     
     return self;
 }
 
 - (void)initCommonly {
-    NSMutableArray *contacts    = (NSMutableArray *)self.contacts;
     NSArray *nameSamples        = @[@"复仇之魂",@"众神之王",@"魅惑魔女",@"变体精灵", // 清晨酒馆
                                     @"水晶室女",@"流浪剑客",@"娜迦海妖",@"撼地神牛",
                                     @"隐形刺客",@"德鲁伊",@"秀逗魔导师",@"剑圣",
@@ -82,9 +88,13 @@
         model.mark = [markSamples objectAtIndex:count];
         model.eng  = [engSamples objectAtIndex:count];
         
-        [contacts addObject:model];
+        [_contactNames addObject:model.name];
+        [_contactMarks addObject:model.mark];
+        [_contactEngs  addObject:model.eng];
+        
+        [_contacts addObject:model];
     }
-
+    
     /**
      *      key : value
      
@@ -92,7 +102,7 @@
      
      *      @"A" : @[@"赵大头",@"陈小头"]
      */
-    self.dataSource = (NSMutableDictionary *)[contacts sortedDictionaryWithPropertyKey:@"name"];
+    self.dataSource = (NSMutableDictionary *)[_contacts sortedDictionaryWithPropertyKey:@"name"];
     
     /**
      *  section indexes titles

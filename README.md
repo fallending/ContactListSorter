@@ -1,7 +1,8 @@
 
 ## 感谢
 1. 原始项目：[youran1024/HTLetterManger](https://github.com/youran1024/HTLetterManger)
-2. 引用项目：[gdavis/GDIIndexBar](https://github.com/gdavis/GDIIndexBar)
+2.1 引用项目：[gdavis/GDIIndexBar](https://github.com/gdavis/GDIIndexBar)
+2.2 引用项目：[PinYin4Objc](https://github.com/kimziv/PinYin4Objc)
 3. 参考项目 1：[zhxnlai/ZLPeoplePickerViewController](https://github.com/zhxnlai/ZLPeoplePickerViewController)
 
 ## 基于原始项目做了什么？
@@ -67,6 +68,5 @@ return _indexBar;
 11. 条目多选：http://code4app.com/ios/Contacts-Multi-Picker/5052a2396803fa8c31000000
 12. 联系人读取：https://github.com/clusterinc/CLTokenInputView、https://github.com/tristanhimmelman/THContactPicker
 13. 二维码传递联系人：http://code4app.com/ios/%E4%BA%8C%E7%BB%B4%E7%A0%81%E4%BA%92%E4%BC%A0%E9%80%9A%E8%AE%AF%E5%BD%95%E8%81%94%E7%B3%BB%E4%BA%BA/5382f49c933bf06f748b5353
-14. Overview of pinyin4j: http://pinyin4j.sourceforge.net/
 15. 一片论文: http://cslt.riit.tsinghua.edu.cn/~fzheng/PAPERS/2009/0907C_JTHU_Pinyin-indexed-method-for-approximate-match_CJ.pdf
 
