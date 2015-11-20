@@ -10,7 +10,7 @@
 
 @class ContactModel;
 
-@interface ZLBaseTableViewController : UITableViewController
+@interface BaseTableViewController : UITableViewController
 
 @property (strong, nonatomic) NSMutableArray *partitionedContacts;
 @property (strong, nonatomic) NSMutableSet *selectedPeople;
@@ -30,7 +30,7 @@
 /**
  *  分段的标题数组
  */
-- (NSArray<NSString *> *)sectionTitlesOfSearchController:(ZLBaseTableViewController *)search;
+- (NSArray<NSString *> *)sectionTitlesOfSearchController:(BaseTableViewController *)search;
 
 /**
  *

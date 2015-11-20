@@ -29,8 +29,8 @@
 		6A1469051BF9A1AC00D718F5 /* NSArray+HTLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1468FD1BF9A1AC00D718F5 /* NSArray+HTLetter.m */; };
 		6A1469061BF9A1AC00D718F5 /* NSString+HTLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1468FF1BF9A1AC00D718F5 /* NSString+HTLetter.m */; };
 		6A1469081BF9A1AC00D718F5 /* Pinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1469041BF9A1AC00D718F5 /* Pinyin.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		6A258BD41BFC897300AD72DA /* ZLBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A258BCD1BFC897300AD72DA /* ZLBaseTableViewController.m */; };
-		6A258BD51BFC897300AD72DA /* ZLResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A258BCF1BFC897300AD72DA /* ZLResultsTableViewController.m */; };
+		6A258BD41BFC897300AD72DA /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A258BCD1BFC897300AD72DA /* BaseTableViewController.m */; };
+		6A258BD51BFC897300AD72DA /* ResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A258BCF1BFC897300AD72DA /* ResultsTableViewController.m */; };
 		6AA58FCE1BFB3D840015FA27 /* NSString+Wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA58FCD1BFB3D840015FA27 /* NSString+Wrapper.m */; };
 /* End PBXBuildFile section */
 
@@ -90,10 +90,10 @@
 		6A1469001BF9A1AC00D718F5 /* HTLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLetter.h; sourceTree = "<group>"; };
 		6A1469031BF9A1AC00D718F5 /* Pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pinyin.h; sourceTree = "<group>"; };
 		6A1469041BF9A1AC00D718F5 /* Pinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pinyin.m; sourceTree = "<group>"; };
-		6A258BCC1BFC897300AD72DA /* ZLBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLBaseTableViewController.h; sourceTree = "<group>"; };
-		6A258BCD1BFC897300AD72DA /* ZLBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLBaseTableViewController.m; sourceTree = "<group>"; };
-		6A258BCE1BFC897300AD72DA /* ZLResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLResultsTableViewController.h; sourceTree = "<group>"; };
-		6A258BCF1BFC897300AD72DA /* ZLResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLResultsTableViewController.m; sourceTree = "<group>"; };
+		6A258BCC1BFC897300AD72DA /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		6A258BCD1BFC897300AD72DA /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		6A258BCE1BFC897300AD72DA /* ResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsTableViewController.h; sourceTree = "<group>"; };
+		6A258BCF1BFC897300AD72DA /* ResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsTableViewController.m; sourceTree = "<group>"; };
 		6AA58FCC1BFB3D840015FA27 /* NSString+Wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Wrapper.h"; sourceTree = "<group>"; };
 		6AA58FCD1BFB3D840015FA27 /* NSString+Wrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Wrapper.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -269,10 +269,10 @@
 			children = (
 				6A0743361BFCE7E800999BD2 /* LRIndexedCollationWithSearch.h */,
 				6A0743371BFCE7E800999BD2 /* LRIndexedCollationWithSearch.m */,
-				6A258BCC1BFC897300AD72DA /* ZLBaseTableViewController.h */,
-				6A258BCD1BFC897300AD72DA /* ZLBaseTableViewController.m */,
-				6A258BCE1BFC897300AD72DA /* ZLResultsTableViewController.h */,
-				6A258BCF1BFC897300AD72DA /* ZLResultsTableViewController.m */,
+				6A258BCC1BFC897300AD72DA /* BaseTableViewController.h */,
+				6A258BCD1BFC897300AD72DA /* BaseTableViewController.m */,
+				6A258BCE1BFC897300AD72DA /* ResultsTableViewController.h */,
+				6A258BCF1BFC897300AD72DA /* ResultsTableViewController.m */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -379,7 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A0743591BFEF1FD00999BD2 /* PinyinHelper.m in Sources */,
-				6A258BD51BFC897300AD72DA /* ZLResultsTableViewController.m in Sources */,
+				6A258BD51BFC897300AD72DA /* ResultsTableViewController.m in Sources */,
 				6A1469061BF9A1AC00D718F5 /* NSString+HTLetter.m in Sources */,
 				6A07433B1BFCE9D000999BD2 /* AddressBookHelper.m in Sources */,
 				6A0743571BFEF1FD00999BD2 /* NSString+PinYin4Cocoa.m in Sources */,
@@ -394,7 +394,7 @@
 				6A0743561BFEF1FD00999BD2 /* HanyuPinyinOutputFormat.m in Sources */,
 				6A1468CB1BF60D5900D718F5 /* ContactViewController.m in Sources */,
 				6A0743381BFCE7E800999BD2 /* LRIndexedCollationWithSearch.m in Sources */,
-				6A258BD41BFC897300AD72DA /* ZLBaseTableViewController.m in Sources */,
+				6A258BD41BFC897300AD72DA /* BaseTableViewController.m in Sources */,
 				6A1468C81BF60D5900D718F5 /* AppDelegate.m in Sources */,
 				6A1468C51BF60D5900D718F5 /* main.m in Sources */,
 				6A032B051BFAD4C60019B302 /* GDIIndexBar.m in Sources */,

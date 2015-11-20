@@ -4,6 +4,8 @@
 #ifndef _HanyuPinyinOutputFormat_H_
 #define _HanyuPinyinOutputFormat_H_
 
+#import <Foundation/Foundation.h>
+
 typedef enum {
   ToneTypeWithToneNumber,
   ToneTypeWithoutTone,

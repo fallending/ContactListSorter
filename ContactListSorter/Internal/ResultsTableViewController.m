@@ -1,13 +1,13 @@
 //
-//  ZLResultsTableViewController.h
+//  ZLResultsTableViewController.m
 //  ZLPeoplePickerViewControllerDemo
 //
 //  Created by Zhixuan Lai on 11/5/14.
 //  Copyright (c) 2014 Zhixuan Lai. All rights reserved.
 //
 
-#import "ZLBaseTableViewController.h"
+#import "ResultsTableViewController.h"
 
-@interface ZLResultsTableViewController : ZLBaseTableViewController
+@implementation ResultsTableViewController
 
 @end

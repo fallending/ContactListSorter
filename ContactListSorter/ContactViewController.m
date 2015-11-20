@@ -8,7 +8,7 @@
 
 #import "ContactViewController.h"
 #import "AppDelegate.h"
-#import "ZLResultsTableViewController.h"
+#import "ResultsTableViewController.h"
 
 @interface ContactViewController () <
     UITableViewDelegate,
@@ -29,7 +29,7 @@
 
 // 搜索栏
 @property (nonatomic, strong) UISearchController *          searchController;
-@property (nonatomic, strong) ZLResultsTableViewController *resultsTableViewController;
+@property (nonatomic, strong) ResultsTableViewController *resultsTableViewController;
 
 @end
 
@@ -50,7 +50,8 @@
 }
 
 - (void)initSearchBar {
-    self.resultsTableViewController = [[ZLResultsTableViewController alloc] init];
+    self.resultsTableViewController = [[ResultsTableViewController alloc] init];
+    self.resultsTableViewController.tableView.delegate  = self;
     
     self.searchController   = [[UISearchController alloc] initWithSearchResultsController:self.resultsTableViewController];
     self.searchController.searchResultsUpdater  = self;
@@ -191,6 +192,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([tableView isEqual:self.tableView]) {
         [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    } else if ([tableView isEqual:self.resultsTableViewController.tableView]) {
+        
     }
 }
 
@@ -317,8 +320,8 @@
 //                      filteredArrayUsingPredicate:finalCompoundPredicate] mutableCopy];
 //    
 //    // hand over the filtered results to our search results table
-    ZLResultsTableViewController *tableController =
-    (ZLResultsTableViewController *)
+    ResultsTableViewController *tableController =
+    (ResultsTableViewController *)
     self.searchController.searchResultsController;
     tableController.selectedPeople = [self.helper.contacts mutableCopy];
 //    [tableController setPartitionedContactsWithContacts:searchResults];

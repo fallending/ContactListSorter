@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Zhixuan Lai. All rights reserved.
 //
 
-#import "ZLBaseTableViewController.h"
+#import "BaseTableViewController.h"
 #import "LRIndexedCollationWithSearch.h"
 #import "AppDelegate.h"
 
-@implementation ZLBaseTableViewController
+@implementation BaseTableViewController
 
 #pragma mark - Properties
 - (NSMutableArray *)partitionedContacts {
