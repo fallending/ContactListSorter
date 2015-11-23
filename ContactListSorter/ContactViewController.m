@@ -193,7 +193,15 @@
     if ([tableView isEqual:self.tableView]) {
         [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     } else if ([tableView isEqual:self.resultsTableViewController.tableView]) {
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
         
+        // 取消search
+        self.searchController.active    = NO;
+        
+        // TODO: 定位
+        
+        
+        // TODO: 应该跳转到详情，可以原先的条目一样
     }
 }
 
