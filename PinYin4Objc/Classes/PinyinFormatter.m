@@ -119,9 +119,15 @@ static unichar numericValues[] = {
         int vowelLocation = rowIndex * 5 + columnIndex;
         unichar markedVowel = [allMarkedVowelStr characterAtIndex:vowelLocation];
         NSMutableString *resultBuffer = [[NSMutableString alloc] init];
+          
           [resultBuffer appendString:[[lowerCasePinyinStr substringToIndex:indexOfUnmarkedVowel+1] stringByReplacingOccurrencesOfString:@"v" withString:@"ü"]];
-        [resultBuffer appendFormat:@"%C",markedVowel];
+          [resultBuffer appendFormat:@"%C",markedVowel];
           [resultBuffer appendString:[[lowerCasePinyinStr substringWithRange:NSMakeRange(indexOfUnmarkedVowel + 1, lowerCasePinyinStr.length-indexOfUnmarkedVowel)] stringByReplacingOccurrencesOfString:@"v" withString:@"ü"]];
+          
+          // someone's pull request
+//          [resultBuffer appendString:[[lowerCasePinyinStr substringToIndex:indexOfUnmarkedVowel] stringByReplacingOccurrencesOfString:@"v" withString:@"ü"]];
+//          [resultBuffer appendFormat:@"%C",markedVowel];
+//          [resultBuffer appendString:[lowerCasePinyinStr substringWithRange:NSMakeRange(indexOfUnmarkedVowel + 1, (lowerCasePinyinStr.length - indexOfUnmarkedVowel) - 2)]];
         return [resultBuffer description];
       }
       else {
