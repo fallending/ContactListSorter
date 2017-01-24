@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class SearchStore;
+
 @interface SearchService : NSObject
+
+@end
+
+#pragma mark -
+
+@interface SearchResult : NSObject
 
 @end

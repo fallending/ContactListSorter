@@ -10,15 +10,18 @@
 //  2. 不支持：#import <AddressBook/AddressBook.h>
 
 #import <Foundation/Foundation.h>
-
+#import <Contacts/Contacts.h>
 #import "ContactExample.h"
 
 @interface ContactService : NSObject
 
 // 权限
-
+// 待添加
 
 // 获取所有联系人
 - (void)loadContacts:(void (^)(BOOL succeeded, NSError *error))completionBlock;
+
+// 存储联系人
+- (void)storeContact:(NSDictionary *)contact withCompletion:(void (^)())completionHandler;
 
 @end

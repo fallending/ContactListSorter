@@ -1,17 +1,17 @@
 //
-//  ContactHelper.m
-//  ContactListSorter
+//  ContactVM.m
+//  kata
 //
-//  Created by fallen.ink on 11/15/15.
-//  Copyright © 2015 fallen.ink. All rights reserved.
+//  Created by fallen.ink on 24/01/2017.
+//  Copyright © 2017 fallenink. All rights reserved.
 //
 
 //  按功能写XXXHelper，不可过于零散，不可不归类
 
-#import "ContactHelper.h"
+#import "ContactVM.h"
 #import "AppDelegate.h"
 
-@interface ContactHelper () {
+@interface ContactVM () {
     NSMutableArray *_contacts;
     NSMutableArray *_contactNames;
     NSMutableArray *_contactMarks;
@@ -22,8 +22,7 @@
 
 @end
 
-@implementation ContactHelper
-
+@implementation ContactVM
 #pragma mark - Initialize
 
 - (instancetype)init {
@@ -130,3 +129,4 @@
 
 
 @end
+

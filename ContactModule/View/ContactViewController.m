@@ -9,6 +9,7 @@
 #import "ContactViewController.h"
 #import "AppDelegate.h"
 #import "ResultsTableViewController.h"
+#import "ContactVM"
 
 @interface ContactViewController () <
     UITableViewDelegate,
@@ -38,7 +39,7 @@
 #pragma mark - Intialize
 
 - (void)initData {
-    self.helper     = [ContactHelper new];
+    self.helper     = [ContactVM new];
     
     [self.helper initCommonly];
 }

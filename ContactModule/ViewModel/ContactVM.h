@@ -1,17 +1,16 @@
 //
-//  ContactHelper.h
-//  ContactListSorter
+//  ContactVM.h
+//  kata
 //
-//  Created by fallen.ink on 11/15/15.
-//  Copyright © 2015 fallen.ink. All rights reserved.
+//  Created by fallen.ink on 24/01/2017.
+//  Copyright © 2017 fallenink. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 @class ContactModel;
 
-@interface ContactHelper : NSObject
-
+@interface ContactVM : NSObject
 @property (nonatomic, strong, readonly) NSArray<ContactModel *> *contacts; // 原始联系人，默认排序
 @property (nonatomic, strong, readonly) NSArray<NSString *> *   contactNames;
 @property (nonatomic, strong, readonly) NSArray<NSString *> *   contactMarks;

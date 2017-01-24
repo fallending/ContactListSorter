@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class ContactHelper;
+@class ContactVM;
 
 @interface ContactViewController : UIViewController
 
-@property (nonatomic, strong) ContactHelper *helper;
+@property (nonatomic, strong) ContactVM *helper;
 
 @end
 
