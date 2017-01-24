@@ -1,5 +1,8 @@
 
+## 在 release版本 ContactListSorter-0.1 之后，该工程不在能够独立运行；project 可能会被删除。
+
 ## 感谢
+
 1. 原始项目：[youran1024/HTLetterManger](https://github.com/youran1024/HTLetterManger)
 2.1 引用项目：[gdavis/GDIIndexBar](https://github.com/gdavis/GDIIndexBar)
 2.2 引用项目：[PinYin4Objc](https://github.com/kimziv/PinYin4Objc)
@@ -61,14 +64,4 @@ _indexBar.textFont              = [UIFont boldSystemFontOfSize:9.f];
 return _indexBar;
 }
 ```
-
-## 还有什么没有做？
-
-8. 添加搜索栏
-9. 排序依据（拼音<首字母、声母、韵母、声调>、）（位置记忆）
-10. 读取系统通讯录：https://github.com/heardrwt/RHAddressBook\https://github.com/Alterplay/APAddressBook
-11. 条目多选：http://code4app.com/ios/Contacts-Multi-Picker/5052a2396803fa8c31000000
-12. 联系人读取：https://github.com/clusterinc/CLTokenInputView、https://github.com/tristanhimmelman/THContactPicker
-13. 二维码传递联系人：http://code4app.com/ios/%E4%BA%8C%E7%BB%B4%E7%A0%81%E4%BA%92%E4%BC%A0%E9%80%9A%E8%AE%AF%E5%BD%95%E8%81%94%E7%B3%BB%E4%BA%BA/5382f49c933bf06f748b5353
-15. 一片论文: http://cslt.riit.tsinghua.edu.cn/~fzheng/PAPERS/2009/0907C_JTHU_Pinyin-indexed-method-for-approximate-match_CJ.pdf
 

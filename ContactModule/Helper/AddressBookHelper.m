@@ -7,6 +7,7 @@
 //
 
 #import "AddressBookHelper.h"
+#import <Contacts/Contacts.h>
 
 @implementation AddressBookHelper
 

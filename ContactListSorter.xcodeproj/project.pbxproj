@@ -7,31 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A032B051BFAD4C60019B302 /* GDIIndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A032B041BFAD4C60019B302 /* GDIIndexBar.m */; };
-		6A0743381BFCE7E800999BD2 /* LRIndexedCollationWithSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0743371BFCE7E800999BD2 /* LRIndexedCollationWithSearch.m */; };
-		6A07433B1BFCE9D000999BD2 /* AddressBookHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A07433A1BFCE9D000999BD2 /* AddressBookHelper.m */; };
-		6A0743441BFDD95100999BD2 /* UISearchBar+Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0743431BFDD95100999BD2 /* UISearchBar+Config.m */; };
-		6A0743551BFEF1FD00999BD2 /* ChineseToPinyinResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0743491BFEF1FD00999BD2 /* ChineseToPinyinResource.m */; };
-		6A0743561BFEF1FD00999BD2 /* HanyuPinyinOutputFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A07434B1BFEF1FD00999BD2 /* HanyuPinyinOutputFormat.m */; };
-		6A0743571BFEF1FD00999BD2 /* NSString+PinYin4Cocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A07434D1BFEF1FD00999BD2 /* NSString+PinYin4Cocoa.m */; };
-		6A0743581BFEF1FD00999BD2 /* PinyinFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0743501BFEF1FD00999BD2 /* PinyinFormatter.m */; };
-		6A0743591BFEF1FD00999BD2 /* PinyinHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0743521BFEF1FD00999BD2 /* PinyinHelper.m */; };
-		6A07435A1BFEF1FD00999BD2 /* unicode_to_hanyu_pinyin.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6A0743541BFEF1FD00999BD2 /* unicode_to_hanyu_pinyin.txt */; };
 		6A1468C51BF60D5900D718F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1468C41BF60D5900D718F5 /* main.m */; };
 		6A1468C81BF60D5900D718F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1468C71BF60D5900D718F5 /* AppDelegate.m */; };
-		6A1468CB1BF60D5900D718F5 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1468CA1BF60D5900D718F5 /* ContactViewController.m */; };
 		6A1468CE1BF60D5900D718F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A1468CC1BF60D5900D718F5 /* Main.storyboard */; };
 		6A1468D01BF60D5900D718F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A1468CF1BF60D5900D718F5 /* Assets.xcassets */; };
 		6A1468D31BF60D5900D718F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A1468D11BF60D5900D718F5 /* LaunchScreen.storyboard */; };
 		6A1468DE1BF60D5900D718F5 /* ContactListSorterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1468DD1BF60D5900D718F5 /* ContactListSorterUITests.m */; };
-		6A1468F41BF8D21200D718F5 /* UITableViewCell+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1468F31BF8D21200D718F5 /* UITableViewCell+Base.m */; };
-		6A1468F71BF8D22D00D718F5 /* ContactHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1468F61BF8D22D00D718F5 /* ContactHelper.m */; };
-		6A1469051BF9A1AC00D718F5 /* NSArray+HTLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1468FD1BF9A1AC00D718F5 /* NSArray+HTLetter.m */; };
-		6A1469061BF9A1AC00D718F5 /* NSString+HTLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1468FF1BF9A1AC00D718F5 /* NSString+HTLetter.m */; };
-		6A1469081BF9A1AC00D718F5 /* Pinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1469041BF9A1AC00D718F5 /* Pinyin.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		6A258BD41BFC897300AD72DA /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A258BCD1BFC897300AD72DA /* BaseTableViewController.m */; };
-		6A258BD51BFC897300AD72DA /* ResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A258BCF1BFC897300AD72DA /* ResultsTableViewController.m */; };
-		6AA58FCE1BFB3D840015FA27 /* NSString+Wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA58FCD1BFB3D840015FA27 /* NSString+Wrapper.m */; };
+		6A2777D31E37014700D55FC2 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A2777D21E37014700D55FC2 /* Contacts.framework */; };
+		6A2777D51E37014C00D55FC2 /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A2777D41E37014C00D55FC2 /* ContactsUI.framework */; };
+		6A2777D91E3703DE00D55FC2 /* SearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2777D81E3703DE00D55FC2 /* SearchService.m */; };
+		6A2777DC1E3703F800D55FC2 /* ContactService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2777DB1E3703F800D55FC2 /* ContactService.m */; };
+		6A768E4C1E36FDC800BEB844 /* AddressBookHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A768E1C1E36FDC800BEB844 /* AddressBookHelper.m */; };
+		6A768E4D1E36FDC800BEB844 /* ContactHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A768E1E1E36FDC800BEB844 /* ContactHelper.m */; };
+		6A768E4E1E36FDC800BEB844 /* NSString+Wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A768E211E36FDC800BEB844 /* NSString+Wrapper.m */; };
+		6A768E4F1E36FDC800BEB844 /* UISearchBar+Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A768E231E36FDC800BEB844 /* UISearchBar+Config.m */; };
+		6A768E501E36FDC800BEB844 /* UITableViewCell+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A768E251E36FDC800BEB844 /* UITableViewCell+Base.m */; };
+		6A768E511E36FDC800BEB844 /* GDIIndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A768E291E36FDC800BEB844 /* GDIIndexBar.m */; };
+		6A768E521E36FDC800BEB844 /* NSArray+HTLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A768E2D1E36FDC800BEB844 /* NSArray+HTLetter.m */; };
+		6A768E531E36FDC800BEB844 /* NSString+HTLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A768E2F1E36FDC800BEB844 /* NSString+HTLetter.m */; };
+		6A768E541E36FDC800BEB844 /* pinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A768E321E36FDC800BEB844 /* pinyin.m */; };
+		6A768E551E36FDC800BEB844 /* ChineseToPinyinResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A768E361E36FDC800BEB844 /* ChineseToPinyinResource.m */; };
+		6A768E561E36FDC800BEB844 /* HanyuPinyinOutputFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A768E381E36FDC800BEB844 /* HanyuPinyinOutputFormat.m */; };
+		6A768E571E36FDC800BEB844 /* NSString+PinYin4Cocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A768E3A1E36FDC800BEB844 /* NSString+PinYin4Cocoa.m */; };
+		6A768E581E36FDC800BEB844 /* PinyinFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A768E3D1E36FDC800BEB844 /* PinyinFormatter.m */; };
+		6A768E591E36FDC800BEB844 /* PinyinHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A768E3F1E36FDC800BEB844 /* PinyinHelper.m */; };
+		6A768E5A1E36FDC800BEB844 /* unicode_to_hanyu_pinyin.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6A768E411E36FDC800BEB844 /* unicode_to_hanyu_pinyin.txt */; };
+		6A768E5B1E36FDC800BEB844 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A768E441E36FDC800BEB844 /* ContactViewController.m */; };
+		6A768E5C1E36FDC800BEB844 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A768E471E36FDC800BEB844 /* BaseTableViewController.m */; };
+		6A768E5D1E36FDC800BEB844 /* LRIndexedCollationWithSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A768E491E36FDC800BEB844 /* LRIndexedCollationWithSearch.m */; };
+		6A768E5E1E36FDC800BEB844 /* ResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A768E4B1E36FDC800BEB844 /* ResultsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,32 +49,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6A032B031BFAD4C60019B302 /* GDIIndexBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIIndexBar.h; sourceTree = "<group>"; };
-		6A032B041BFAD4C60019B302 /* GDIIndexBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIIndexBar.m; sourceTree = "<group>"; };
-		6A0743361BFCE7E800999BD2 /* LRIndexedCollationWithSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRIndexedCollationWithSearch.h; sourceTree = "<group>"; };
-		6A0743371BFCE7E800999BD2 /* LRIndexedCollationWithSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRIndexedCollationWithSearch.m; sourceTree = "<group>"; };
-		6A0743391BFCE9D000999BD2 /* AddressBookHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookHelper.h; sourceTree = "<group>"; };
-		6A07433A1BFCE9D000999BD2 /* AddressBookHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookHelper.m; sourceTree = "<group>"; };
-		6A0743421BFDD95100999BD2 /* UISearchBar+Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+Config.h"; sourceTree = "<group>"; };
-		6A0743431BFDD95100999BD2 /* UISearchBar+Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+Config.m"; sourceTree = "<group>"; };
-		6A0743481BFEF1FD00999BD2 /* ChineseToPinyinResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChineseToPinyinResource.h; sourceTree = "<group>"; };
-		6A0743491BFEF1FD00999BD2 /* ChineseToPinyinResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChineseToPinyinResource.m; sourceTree = "<group>"; };
-		6A07434A1BFEF1FD00999BD2 /* HanyuPinyinOutputFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HanyuPinyinOutputFormat.h; sourceTree = "<group>"; };
-		6A07434B1BFEF1FD00999BD2 /* HanyuPinyinOutputFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HanyuPinyinOutputFormat.m; sourceTree = "<group>"; };
-		6A07434C1BFEF1FD00999BD2 /* NSString+PinYin4Cocoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PinYin4Cocoa.h"; sourceTree = "<group>"; };
-		6A07434D1BFEF1FD00999BD2 /* NSString+PinYin4Cocoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PinYin4Cocoa.m"; sourceTree = "<group>"; };
-		6A07434E1BFEF1FD00999BD2 /* PinYin4Objc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinYin4Objc.h; sourceTree = "<group>"; };
-		6A07434F1BFEF1FD00999BD2 /* PinyinFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinyinFormatter.h; sourceTree = "<group>"; };
-		6A0743501BFEF1FD00999BD2 /* PinyinFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinyinFormatter.m; sourceTree = "<group>"; };
-		6A0743511BFEF1FD00999BD2 /* PinyinHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinyinHelper.h; sourceTree = "<group>"; };
-		6A0743521BFEF1FD00999BD2 /* PinyinHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinyinHelper.m; sourceTree = "<group>"; };
-		6A0743541BFEF1FD00999BD2 /* unicode_to_hanyu_pinyin.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = unicode_to_hanyu_pinyin.txt; sourceTree = "<group>"; };
 		6A1468C01BF60D5900D718F5 /* ContactListSorter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactListSorter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A1468C41BF60D5900D718F5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6A1468C61BF60D5900D718F5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6A1468C71BF60D5900D718F5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6A1468C91BF60D5900D718F5 /* ContactViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
-		6A1468CA1BF60D5900D718F5 /* ContactViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
 		6A1468CD1BF60D5900D718F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6A1468CF1BF60D5900D718F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A1468D21BF60D5900D718F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,23 +61,52 @@
 		6A1468DD1BF60D5900D718F5 /* ContactListSorterUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactListSorterUITests.m; sourceTree = "<group>"; };
 		6A1468DF1BF60D5900D718F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A1468EC1BF60EA100D718F5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		6A1468F21BF8D21200D718F5 /* UITableViewCell+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Base.h"; sourceTree = "<group>"; };
-		6A1468F31BF8D21200D718F5 /* UITableViewCell+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Base.m"; sourceTree = "<group>"; };
-		6A1468F51BF8D22D00D718F5 /* ContactHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactHelper.h; sourceTree = "<group>"; };
-		6A1468F61BF8D22D00D718F5 /* ContactHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactHelper.m; sourceTree = "<group>"; };
-		6A1468FC1BF9A1AC00D718F5 /* NSArray+HTLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+HTLetter.h"; sourceTree = "<group>"; };
-		6A1468FD1BF9A1AC00D718F5 /* NSArray+HTLetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+HTLetter.m"; sourceTree = "<group>"; };
-		6A1468FE1BF9A1AC00D718F5 /* NSString+HTLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTLetter.h"; sourceTree = "<group>"; };
-		6A1468FF1BF9A1AC00D718F5 /* NSString+HTLetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTLetter.m"; sourceTree = "<group>"; };
-		6A1469001BF9A1AC00D718F5 /* HTLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLetter.h; sourceTree = "<group>"; };
-		6A1469031BF9A1AC00D718F5 /* Pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pinyin.h; sourceTree = "<group>"; };
-		6A1469041BF9A1AC00D718F5 /* Pinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pinyin.m; sourceTree = "<group>"; };
-		6A258BCC1BFC897300AD72DA /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
-		6A258BCD1BFC897300AD72DA /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
-		6A258BCE1BFC897300AD72DA /* ResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsTableViewController.h; sourceTree = "<group>"; };
-		6A258BCF1BFC897300AD72DA /* ResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsTableViewController.m; sourceTree = "<group>"; };
-		6AA58FCC1BFB3D840015FA27 /* NSString+Wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Wrapper.h"; sourceTree = "<group>"; };
-		6AA58FCD1BFB3D840015FA27 /* NSString+Wrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Wrapper.m"; sourceTree = "<group>"; };
+		6A2777D21E37014700D55FC2 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
+		6A2777D41E37014C00D55FC2 /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
+		6A2777D71E3703DE00D55FC2 /* SearchService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchService.h; sourceTree = "<group>"; };
+		6A2777D81E3703DE00D55FC2 /* SearchService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchService.m; sourceTree = "<group>"; };
+		6A2777DA1E3703F800D55FC2 /* ContactService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactService.h; sourceTree = "<group>"; };
+		6A2777DB1E3703F800D55FC2 /* ContactService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactService.m; sourceTree = "<group>"; };
+		6A2777DD1E37048800D55FC2 /* ContactExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactExample.h; sourceTree = "<group>"; };
+		6A768E1B1E36FDC800BEB844 /* AddressBookHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookHelper.h; sourceTree = "<group>"; };
+		6A768E1C1E36FDC800BEB844 /* AddressBookHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookHelper.m; sourceTree = "<group>"; };
+		6A768E1D1E36FDC800BEB844 /* ContactHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactHelper.h; sourceTree = "<group>"; };
+		6A768E1E1E36FDC800BEB844 /* ContactHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactHelper.m; sourceTree = "<group>"; };
+		6A768E201E36FDC800BEB844 /* NSString+Wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Wrapper.h"; sourceTree = "<group>"; };
+		6A768E211E36FDC800BEB844 /* NSString+Wrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Wrapper.m"; sourceTree = "<group>"; };
+		6A768E221E36FDC800BEB844 /* UISearchBar+Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+Config.h"; sourceTree = "<group>"; };
+		6A768E231E36FDC800BEB844 /* UISearchBar+Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+Config.m"; sourceTree = "<group>"; };
+		6A768E241E36FDC800BEB844 /* UITableViewCell+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Base.h"; sourceTree = "<group>"; };
+		6A768E251E36FDC800BEB844 /* UITableViewCell+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Base.m"; sourceTree = "<group>"; };
+		6A768E281E36FDC800BEB844 /* GDIIndexBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIIndexBar.h; sourceTree = "<group>"; };
+		6A768E291E36FDC800BEB844 /* GDIIndexBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIIndexBar.m; sourceTree = "<group>"; };
+		6A768E2C1E36FDC800BEB844 /* NSArray+HTLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+HTLetter.h"; sourceTree = "<group>"; };
+		6A768E2D1E36FDC800BEB844 /* NSArray+HTLetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+HTLetter.m"; sourceTree = "<group>"; };
+		6A768E2E1E36FDC800BEB844 /* NSString+HTLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTLetter.h"; sourceTree = "<group>"; };
+		6A768E2F1E36FDC800BEB844 /* NSString+HTLetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTLetter.m"; sourceTree = "<group>"; };
+		6A768E301E36FDC800BEB844 /* HTLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLetter.h; sourceTree = "<group>"; };
+		6A768E311E36FDC800BEB844 /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
+		6A768E321E36FDC800BEB844 /* pinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pinyin.m; sourceTree = "<group>"; };
+		6A768E351E36FDC800BEB844 /* ChineseToPinyinResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChineseToPinyinResource.h; sourceTree = "<group>"; };
+		6A768E361E36FDC800BEB844 /* ChineseToPinyinResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChineseToPinyinResource.m; sourceTree = "<group>"; };
+		6A768E371E36FDC800BEB844 /* HanyuPinyinOutputFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HanyuPinyinOutputFormat.h; sourceTree = "<group>"; };
+		6A768E381E36FDC800BEB844 /* HanyuPinyinOutputFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HanyuPinyinOutputFormat.m; sourceTree = "<group>"; };
+		6A768E391E36FDC800BEB844 /* NSString+PinYin4Cocoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PinYin4Cocoa.h"; sourceTree = "<group>"; };
+		6A768E3A1E36FDC800BEB844 /* NSString+PinYin4Cocoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PinYin4Cocoa.m"; sourceTree = "<group>"; };
+		6A768E3B1E36FDC800BEB844 /* PinYin4Objc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinYin4Objc.h; sourceTree = "<group>"; };
+		6A768E3C1E36FDC800BEB844 /* PinyinFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinyinFormatter.h; sourceTree = "<group>"; };
+		6A768E3D1E36FDC800BEB844 /* PinyinFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinyinFormatter.m; sourceTree = "<group>"; };
+		6A768E3E1E36FDC800BEB844 /* PinyinHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinyinHelper.h; sourceTree = "<group>"; };
+		6A768E3F1E36FDC800BEB844 /* PinyinHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinyinHelper.m; sourceTree = "<group>"; };
+		6A768E411E36FDC800BEB844 /* unicode_to_hanyu_pinyin.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = unicode_to_hanyu_pinyin.txt; sourceTree = "<group>"; };
+		6A768E431E36FDC800BEB844 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
+		6A768E441E36FDC800BEB844 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
+		6A768E461E36FDC800BEB844 /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		6A768E471E36FDC800BEB844 /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		6A768E481E36FDC800BEB844 /* LRIndexedCollationWithSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRIndexedCollationWithSearch.h; sourceTree = "<group>"; };
+		6A768E491E36FDC800BEB844 /* LRIndexedCollationWithSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRIndexedCollationWithSearch.m; sourceTree = "<group>"; };
+		6A768E4A1E36FDC800BEB844 /* ResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsTableViewController.h; sourceTree = "<group>"; };
+		6A768E4B1E36FDC800BEB844 /* ResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +114,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A2777D51E37014C00D55FC2 /* ContactsUI.framework in Frameworks */,
+				6A2777D31E37014700D55FC2 /* Contacts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,61 +129,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6A032B021BFAD4C60019B302 /* GDIndexBar */ = {
-			isa = PBXGroup;
-			children = (
-				6A032B031BFAD4C60019B302 /* GDIIndexBar.h */,
-				6A032B041BFAD4C60019B302 /* GDIIndexBar.m */,
-			);
-			path = GDIndexBar;
-			sourceTree = "<group>";
-		};
-		6A0743461BFEF1FD00999BD2 /* PinYin4Objc */ = {
-			isa = PBXGroup;
-			children = (
-				6A0743471BFEF1FD00999BD2 /* Classes */,
-				6A0743531BFEF1FD00999BD2 /* Resources */,
-			);
-			path = PinYin4Objc;
-			sourceTree = "<group>";
-		};
-		6A0743471BFEF1FD00999BD2 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				6A0743481BFEF1FD00999BD2 /* ChineseToPinyinResource.h */,
-				6A0743491BFEF1FD00999BD2 /* ChineseToPinyinResource.m */,
-				6A07434A1BFEF1FD00999BD2 /* HanyuPinyinOutputFormat.h */,
-				6A07434B1BFEF1FD00999BD2 /* HanyuPinyinOutputFormat.m */,
-				6A07434C1BFEF1FD00999BD2 /* NSString+PinYin4Cocoa.h */,
-				6A07434D1BFEF1FD00999BD2 /* NSString+PinYin4Cocoa.m */,
-				6A07434E1BFEF1FD00999BD2 /* PinYin4Objc.h */,
-				6A07434F1BFEF1FD00999BD2 /* PinyinFormatter.h */,
-				6A0743501BFEF1FD00999BD2 /* PinyinFormatter.m */,
-				6A0743511BFEF1FD00999BD2 /* PinyinHelper.h */,
-				6A0743521BFEF1FD00999BD2 /* PinyinHelper.m */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		6A0743531BFEF1FD00999BD2 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				6A0743541BFEF1FD00999BD2 /* unicode_to_hanyu_pinyin.txt */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		6A1468B71BF60D5900D718F5 = {
 			isa = PBXGroup;
 			children = (
-				6A0743461BFEF1FD00999BD2 /* PinYin4Objc */,
-				6A032B021BFAD4C60019B302 /* GDIndexBar */,
-				6A1468FA1BF9A1AC00D718F5 /* HTLetter */,
+				6A768E191E36FDC800BEB844 /* ContactModule */,
 				6A1468EC1BF60EA100D718F5 /* README.md */,
-				6A1468E81BF60E6F00D718F5 /* Helper */,
 				6A1468C21BF60D5900D718F5 /* ContactListSorter */,
 				6A1468DC1BF60D5900D718F5 /* ContactListSorterUITests */,
 				6A1468C11BF60D5900D718F5 /* Products */,
+				6A2777D11E37014700D55FC2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,11 +153,8 @@
 		6A1468C21BF60D5900D718F5 /* ContactListSorter */ = {
 			isa = PBXGroup;
 			children = (
-				6A258BC51BFC897300AD72DA /* Internal */,
 				6A1468C61BF60D5900D718F5 /* AppDelegate.h */,
 				6A1468C71BF60D5900D718F5 /* AppDelegate.m */,
-				6A1468C91BF60D5900D718F5 /* ContactViewController.h */,
-				6A1468CA1BF60D5900D718F5 /* ContactViewController.m */,
 				6A1468CC1BF60D5900D718F5 /* Main.storyboard */,
 				6A1468CF1BF60D5900D718F5 /* Assets.xcassets */,
 				6A1468D11BF60D5900D718F5 /* LaunchScreen.storyboard */,
@@ -217,62 +181,174 @@
 			path = ContactListSorterUITests;
 			sourceTree = "<group>";
 		};
-		6A1468E81BF60E6F00D718F5 /* Helper */ = {
+		6A2777CE1E36FEFA00D55FC2 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				6A1468F11BF8D21200D718F5 /* extension */,
-				6A1468F51BF8D22D00D718F5 /* ContactHelper.h */,
-				6A1468F61BF8D22D00D718F5 /* ContactHelper.m */,
-				6A0743391BFCE9D000999BD2 /* AddressBookHelper.h */,
-				6A07433A1BFCE9D000999BD2 /* AddressBookHelper.m */,
+				6A2777D61E37038D00D55FC2 /* Contact */,
+				6A2777CF1E36FF7000D55FC2 /* Searcher */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		6A2777CF1E36FF7000D55FC2 /* Searcher */ = {
+			isa = PBXGroup;
+			children = (
+				6A2777D71E3703DE00D55FC2 /* SearchService.h */,
+				6A2777D81E3703DE00D55FC2 /* SearchService.m */,
+			);
+			path = Searcher;
+			sourceTree = "<group>";
+		};
+		6A2777D11E37014700D55FC2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A2777D41E37014C00D55FC2 /* ContactsUI.framework */,
+				6A2777D21E37014700D55FC2 /* Contacts.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6A2777D61E37038D00D55FC2 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				6A2777DA1E3703F800D55FC2 /* ContactService.h */,
+				6A2777DB1E3703F800D55FC2 /* ContactService.m */,
+				6A2777DD1E37048800D55FC2 /* ContactExample.h */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		6A768E191E36FDC800BEB844 /* ContactModule */ = {
+			isa = PBXGroup;
+			children = (
+				6A2777CE1E36FEFA00D55FC2 /* Service */,
+				6A768E1A1E36FDC800BEB844 /* Helper */,
+				6A768E261E36FDC800BEB844 /* Vendor */,
+				6A768E421E36FDC800BEB844 /* View */,
+			);
+			path = ContactModule;
+			sourceTree = "<group>";
+		};
+		6A768E1A1E36FDC800BEB844 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				6A768E1B1E36FDC800BEB844 /* AddressBookHelper.h */,
+				6A768E1C1E36FDC800BEB844 /* AddressBookHelper.m */,
+				6A768E1D1E36FDC800BEB844 /* ContactHelper.h */,
+				6A768E1E1E36FDC800BEB844 /* ContactHelper.m */,
+				6A768E1F1E36FDC800BEB844 /* extension */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		6A1468F11BF8D21200D718F5 /* extension */ = {
+		6A768E1F1E36FDC800BEB844 /* extension */ = {
 			isa = PBXGroup;
 			children = (
-				6AA58FCC1BFB3D840015FA27 /* NSString+Wrapper.h */,
-				6AA58FCD1BFB3D840015FA27 /* NSString+Wrapper.m */,
-				6A1468F21BF8D21200D718F5 /* UITableViewCell+Base.h */,
-				6A1468F31BF8D21200D718F5 /* UITableViewCell+Base.m */,
-				6A0743421BFDD95100999BD2 /* UISearchBar+Config.h */,
-				6A0743431BFDD95100999BD2 /* UISearchBar+Config.m */,
+				6A768E201E36FDC800BEB844 /* NSString+Wrapper.h */,
+				6A768E211E36FDC800BEB844 /* NSString+Wrapper.m */,
+				6A768E221E36FDC800BEB844 /* UISearchBar+Config.h */,
+				6A768E231E36FDC800BEB844 /* UISearchBar+Config.m */,
+				6A768E241E36FDC800BEB844 /* UITableViewCell+Base.h */,
+				6A768E251E36FDC800BEB844 /* UITableViewCell+Base.m */,
 			);
 			path = extension;
 			sourceTree = "<group>";
 		};
-		6A1468FA1BF9A1AC00D718F5 /* HTLetter */ = {
+		6A768E261E36FDC800BEB844 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				6A1468FB1BF9A1AC00D718F5 /* extension */,
-				6A1469001BF9A1AC00D718F5 /* HTLetter.h */,
-				6A1469031BF9A1AC00D718F5 /* Pinyin.h */,
-				6A1469041BF9A1AC00D718F5 /* Pinyin.m */,
+				6A768E271E36FDC800BEB844 /* GDIndexBar */,
+				6A768E2A1E36FDC800BEB844 /* HTLetter */,
+				6A768E331E36FDC800BEB844 /* PinYin4Objc */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		6A768E271E36FDC800BEB844 /* GDIndexBar */ = {
+			isa = PBXGroup;
+			children = (
+				6A768E281E36FDC800BEB844 /* GDIIndexBar.h */,
+				6A768E291E36FDC800BEB844 /* GDIIndexBar.m */,
+			);
+			path = GDIndexBar;
+			sourceTree = "<group>";
+		};
+		6A768E2A1E36FDC800BEB844 /* HTLetter */ = {
+			isa = PBXGroup;
+			children = (
+				6A768E2B1E36FDC800BEB844 /* extension */,
+				6A768E301E36FDC800BEB844 /* HTLetter.h */,
+				6A768E311E36FDC800BEB844 /* pinyin.h */,
+				6A768E321E36FDC800BEB844 /* pinyin.m */,
 			);
 			path = HTLetter;
 			sourceTree = "<group>";
 		};
-		6A1468FB1BF9A1AC00D718F5 /* extension */ = {
+		6A768E2B1E36FDC800BEB844 /* extension */ = {
 			isa = PBXGroup;
 			children = (
-				6A1468FC1BF9A1AC00D718F5 /* NSArray+HTLetter.h */,
-				6A1468FD1BF9A1AC00D718F5 /* NSArray+HTLetter.m */,
-				6A1468FE1BF9A1AC00D718F5 /* NSString+HTLetter.h */,
-				6A1468FF1BF9A1AC00D718F5 /* NSString+HTLetter.m */,
+				6A768E2C1E36FDC800BEB844 /* NSArray+HTLetter.h */,
+				6A768E2D1E36FDC800BEB844 /* NSArray+HTLetter.m */,
+				6A768E2E1E36FDC800BEB844 /* NSString+HTLetter.h */,
+				6A768E2F1E36FDC800BEB844 /* NSString+HTLetter.m */,
 			);
 			path = extension;
 			sourceTree = "<group>";
 		};
-		6A258BC51BFC897300AD72DA /* Internal */ = {
+		6A768E331E36FDC800BEB844 /* PinYin4Objc */ = {
 			isa = PBXGroup;
 			children = (
-				6A0743361BFCE7E800999BD2 /* LRIndexedCollationWithSearch.h */,
-				6A0743371BFCE7E800999BD2 /* LRIndexedCollationWithSearch.m */,
-				6A258BCC1BFC897300AD72DA /* BaseTableViewController.h */,
-				6A258BCD1BFC897300AD72DA /* BaseTableViewController.m */,
-				6A258BCE1BFC897300AD72DA /* ResultsTableViewController.h */,
-				6A258BCF1BFC897300AD72DA /* ResultsTableViewController.m */,
+				6A768E341E36FDC800BEB844 /* Classes */,
+				6A768E401E36FDC800BEB844 /* Resources */,
+			);
+			path = PinYin4Objc;
+			sourceTree = "<group>";
+		};
+		6A768E341E36FDC800BEB844 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6A768E351E36FDC800BEB844 /* ChineseToPinyinResource.h */,
+				6A768E361E36FDC800BEB844 /* ChineseToPinyinResource.m */,
+				6A768E371E36FDC800BEB844 /* HanyuPinyinOutputFormat.h */,
+				6A768E381E36FDC800BEB844 /* HanyuPinyinOutputFormat.m */,
+				6A768E391E36FDC800BEB844 /* NSString+PinYin4Cocoa.h */,
+				6A768E3A1E36FDC800BEB844 /* NSString+PinYin4Cocoa.m */,
+				6A768E3B1E36FDC800BEB844 /* PinYin4Objc.h */,
+				6A768E3C1E36FDC800BEB844 /* PinyinFormatter.h */,
+				6A768E3D1E36FDC800BEB844 /* PinyinFormatter.m */,
+				6A768E3E1E36FDC800BEB844 /* PinyinHelper.h */,
+				6A768E3F1E36FDC800BEB844 /* PinyinHelper.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		6A768E401E36FDC800BEB844 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6A768E411E36FDC800BEB844 /* unicode_to_hanyu_pinyin.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6A768E421E36FDC800BEB844 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6A768E431E36FDC800BEB844 /* ContactViewController.h */,
+				6A768E441E36FDC800BEB844 /* ContactViewController.m */,
+				6A768E451E36FDC800BEB844 /* Internal */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6A768E451E36FDC800BEB844 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				6A768E461E36FDC800BEB844 /* BaseTableViewController.h */,
+				6A768E471E36FDC800BEB844 /* BaseTableViewController.m */,
+				6A768E481E36FDC800BEB844 /* LRIndexedCollationWithSearch.h */,
+				6A768E491E36FDC800BEB844 /* LRIndexedCollationWithSearch.m */,
+				6A768E4A1E36FDC800BEB844 /* ResultsTableViewController.h */,
+				6A768E4B1E36FDC800BEB844 /* ResultsTableViewController.m */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -357,7 +433,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A07435A1BFEF1FD00999BD2 /* unicode_to_hanyu_pinyin.txt in Resources */,
+				6A768E5A1E36FDC800BEB844 /* unicode_to_hanyu_pinyin.txt in Resources */,
 				6A1468D31BF60D5900D718F5 /* LaunchScreen.storyboard in Resources */,
 				6A1468D01BF60D5900D718F5 /* Assets.xcassets in Resources */,
 				6A1468CE1BF60D5900D718F5 /* Main.storyboard in Resources */,
@@ -378,26 +454,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A0743591BFEF1FD00999BD2 /* PinyinHelper.m in Sources */,
-				6A258BD51BFC897300AD72DA /* ResultsTableViewController.m in Sources */,
-				6A1469061BF9A1AC00D718F5 /* NSString+HTLetter.m in Sources */,
-				6A07433B1BFCE9D000999BD2 /* AddressBookHelper.m in Sources */,
-				6A0743571BFEF1FD00999BD2 /* NSString+PinYin4Cocoa.m in Sources */,
-				6AA58FCE1BFB3D840015FA27 /* NSString+Wrapper.m in Sources */,
-				6A0743441BFDD95100999BD2 /* UISearchBar+Config.m in Sources */,
-				6A0743551BFEF1FD00999BD2 /* ChineseToPinyinResource.m in Sources */,
-				6A1469051BF9A1AC00D718F5 /* NSArray+HTLetter.m in Sources */,
-				6A0743581BFEF1FD00999BD2 /* PinyinFormatter.m in Sources */,
-				6A1469081BF9A1AC00D718F5 /* Pinyin.m in Sources */,
-				6A1468F71BF8D22D00D718F5 /* ContactHelper.m in Sources */,
-				6A1468F41BF8D21200D718F5 /* UITableViewCell+Base.m in Sources */,
-				6A0743561BFEF1FD00999BD2 /* HanyuPinyinOutputFormat.m in Sources */,
-				6A1468CB1BF60D5900D718F5 /* ContactViewController.m in Sources */,
-				6A0743381BFCE7E800999BD2 /* LRIndexedCollationWithSearch.m in Sources */,
-				6A258BD41BFC897300AD72DA /* BaseTableViewController.m in Sources */,
+				6A768E591E36FDC800BEB844 /* PinyinHelper.m in Sources */,
+				6A768E501E36FDC800BEB844 /* UITableViewCell+Base.m in Sources */,
+				6A2777DC1E3703F800D55FC2 /* ContactService.m in Sources */,
+				6A768E511E36FDC800BEB844 /* GDIIndexBar.m in Sources */,
+				6A768E4C1E36FDC800BEB844 /* AddressBookHelper.m in Sources */,
+				6A768E5E1E36FDC800BEB844 /* ResultsTableViewController.m in Sources */,
+				6A768E521E36FDC800BEB844 /* NSArray+HTLetter.m in Sources */,
+				6A768E561E36FDC800BEB844 /* HanyuPinyinOutputFormat.m in Sources */,
+				6A768E5B1E36FDC800BEB844 /* ContactViewController.m in Sources */,
+				6A768E4F1E36FDC800BEB844 /* UISearchBar+Config.m in Sources */,
+				6A768E551E36FDC800BEB844 /* ChineseToPinyinResource.m in Sources */,
+				6A768E4E1E36FDC800BEB844 /* NSString+Wrapper.m in Sources */,
+				6A768E5C1E36FDC800BEB844 /* BaseTableViewController.m in Sources */,
 				6A1468C81BF60D5900D718F5 /* AppDelegate.m in Sources */,
+				6A768E531E36FDC800BEB844 /* NSString+HTLetter.m in Sources */,
+				6A768E581E36FDC800BEB844 /* PinyinFormatter.m in Sources */,
+				6A768E541E36FDC800BEB844 /* pinyin.m in Sources */,
+				6A768E571E36FDC800BEB844 /* NSString+PinYin4Cocoa.m in Sources */,
+				6A768E5D1E36FDC800BEB844 /* LRIndexedCollationWithSearch.m in Sources */,
+				6A768E4D1E36FDC800BEB844 /* ContactHelper.m in Sources */,
 				6A1468C51BF60D5900D718F5 /* main.m in Sources */,
-				6A032B051BFAD4C60019B302 /* GDIIndexBar.m in Sources */,
+				6A2777D91E3703DE00D55FC2 /* SearchService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
