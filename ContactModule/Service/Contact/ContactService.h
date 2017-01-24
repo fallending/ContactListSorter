@@ -17,4 +17,8 @@
 
 // 权限
 
+
+// 获取所有联系人
+- (void)loadContacts:(void (^)(BOOL succeeded, NSError *error))completionBlock;
+
 @end
