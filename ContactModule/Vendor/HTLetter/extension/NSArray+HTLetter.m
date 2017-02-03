@@ -6,10 +6,10 @@
 //  Copyright (c) 2013年 Hunter. All rights reserved.
 //
 
+#import "_captain.h"
 #import "NSArray+HTLetter.h"
 #import "NSString+HTLetter.h"
 #import "pinyin.h"
-#import "NSString+Wrapper.h"
 #import "PinYin4Objc.h"
 
 @implementation NSArray (HTLetter)
@@ -23,9 +23,7 @@
         //检查 str 是不是 NSString 类型
         if (![str isKindOfClass:[NSString class]]) {
             assert(@"object in array is not NSString");
-#ifdef DEBUG
-            NSLog(@"object in array is not NSString, it's [%@]", NSStringFromClass([str class]));
-#endif
+            
             continue;
         }
         
