@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Zhixuan Lai. All rights reserved.
 //
 
-#import "BaseTableViewController.h"
+#import "CMBaseTableViewController.h"
 
-@interface ResultsTableViewController : BaseTableViewController
+@interface ResultsTableViewController : CMBaseTableViewController
 
 @end

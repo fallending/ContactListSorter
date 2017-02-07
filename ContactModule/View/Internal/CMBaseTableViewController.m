@@ -6,18 +6,21 @@
 //  Copyright (c) 2014 Zhixuan Lai. All rights reserved.
 //
 
-#import "BaseTableViewController.h"
+#import "CMBaseTableViewController.h"
 #import "LRIndexedCollationWithSearch.h"
-#import "AppDelegate.h"
+//#import "AppDelegate.h"
+#import "mvc-native.h"
+#import "HTLetter.h"
+#import "ContactVM.h"
 
-@interface BaseTableViewController ()
+@interface CMBaseTableViewController ()
 
 @property (nonatomic, strong) NSMutableArray<NSString *> *  sectionTitles;
 @property (nonatomic, strong) NSMutableDictionary *         dataSource;
 
 @end
 
-@implementation BaseTableViewController
+@implementation CMBaseTableViewController
 
 #pragma mark - Properties
 - (NSMutableArray *)partitionedContacts {

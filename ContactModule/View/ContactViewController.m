@@ -6,10 +6,15 @@
 //  Copyright © 2015 fallen.ink. All rights reserved.
 //
 
+#import "foundation/_foundation.h"
 #import "ContactViewController.h"
-#import "AppDelegate.h"
+//#import "AppDelegate.h"
 #import "ResultsTableViewController.h"
-#import "ContactVM"
+#import "ContactVM.h"
+#import "GDIIndexBar.h"
+#import "mvc/mvc-native.h"
+#import "UISearchBar+Config.h"
+#import "HTLetter.h"
 
 @interface ContactViewController () <
     UITableViewDelegate,

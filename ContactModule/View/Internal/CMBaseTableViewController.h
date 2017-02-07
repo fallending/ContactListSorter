@@ -10,7 +10,7 @@
 
 @class ContactModel;
 
-@interface BaseTableViewController : UITableViewController
+@interface CMBaseTableViewController : UITableViewController
 
 @property (strong, nonatomic) NSMutableArray *partitionedContacts;
 @property (strong, nonatomic) NSMutableSet *selectedPeople;
