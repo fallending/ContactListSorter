@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 Hunter. All rights reserved.
 //
 
-#import "_captain.h"
+#import "_greats.h"
 #import "NSArray+HTLetter.h"
 #import "NSString+HTLetter.h"
 #import "pinyin.h"
