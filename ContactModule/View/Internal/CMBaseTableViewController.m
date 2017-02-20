@@ -8,9 +8,8 @@
 
 #import "CMBaseTableViewController.h"
 #import "LRIndexedCollationWithSearch.h"
-//#import "AppDelegate.h"
-#import "mvc-native.h"
-#import "HTLetter.h"
+#import "_pinyin.h"
+#import "_ui_core.h"
 #import "ContactVM.h"
 
 @interface CMBaseTableViewController ()

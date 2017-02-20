@@ -9,7 +9,7 @@
 //  按功能写XXXHelper，不可过于零散，不可不归类
 
 #import "ContactVM.h"
-#import "HTLetter.h"
+#import "_pinyin.h"
 
 @interface ContactVM () {
     NSMutableArray *_contacts;
